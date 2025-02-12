@@ -1,4 +1,4 @@
-package com.example.model;
+package com.example.demo.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -17,7 +17,7 @@ public class RegistroPractica {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Long id;
 
 	@ManyToOne
 	@JoinColumn(name = "alumno_id", nullable = false)
