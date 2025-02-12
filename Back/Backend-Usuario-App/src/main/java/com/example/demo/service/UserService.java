@@ -1,6 +1,10 @@
 package com.example.demo.service;
 
-import com.example.demo.model.Usuario;
+
+import java.util.List;
+
+import com.example.model.RegistroPractica;
+import com.example.model.Usuario;
 
 import jakarta.validation.constraints.Size;
 
@@ -12,6 +16,8 @@ public interface UserService {
 
 	public Usuario verDatos(Long idUser); 
 
-	public Usuario consultarDetalles(Long idUser);
+	public List<RegistroPractica> consultarDetalles(Long idUser);
+
+	public Integer horasTotales(Long id);
 	
 }
