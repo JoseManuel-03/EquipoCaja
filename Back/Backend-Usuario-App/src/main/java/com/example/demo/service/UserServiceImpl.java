@@ -40,8 +40,8 @@ public class UserServiceImpl implements UserService {
 			}
 
 			Usuario usuario = usuarioOpt.get();
-			String passwordCipher = DigestUtils.sha256Hex(password);
-			if (!usuario.getContraseña().equals(passwordCipher)) {
+			
+			if (!usuario.getContraseña().equals(password)) {
 				log.debug("El usuario: " + user + " sin autorización");
 				throw new UserUnauthorizedException("Password de usuario incorrecta");
 			}
@@ -73,14 +73,13 @@ public class UserServiceImpl implements UserService {
 			}
 			Usuario usuario = usuarioOpt.get();
 
-			String passwordCipherOld = DigestUtils.sha256Hex(getOldPassword);
-			if (!usuario.getContraseña().equals(passwordCipherOld)) {
+			if (!usuario.getContraseña().equals(getOldPassword)) {
 				log.debug("Pass indicada para cambio incorrecta ");
 				throw new UserUnauthorizedException("El password no es correcto");
 			}
 
-			String passwordCipherNew = DigestUtils.sha256Hex(newPassword);
-			usuario.setContraseña(passwordCipherNew);
+			
+			usuario.setContraseña(newPassword);
 			userRepository.save(usuario);
 			log.debug("Password cambiada con exito");
 
