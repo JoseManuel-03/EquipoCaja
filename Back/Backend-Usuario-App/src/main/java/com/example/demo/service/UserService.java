@@ -3,8 +3,8 @@ package com.example.demo.service;
 
 import java.util.List;
 
-import com.example.model.RegistroPractica;
-import com.example.model.Usuario;
+import com.example.demo.model.RegistroPractica;
+import com.example.demo.model.Usuario;
 
 import jakarta.validation.constraints.Size;
 

@@ -2,8 +2,8 @@ package com.example.demo.api.request;
 
 import java.util.List;
 
-import com.example.model.RegistroPractica;
-import com.example.model.Usuario;
+import com.example.demo.model.RegistroPractica;
+import com.example.demo.model.Usuario;
 
 import lombok.Data;
 @Data

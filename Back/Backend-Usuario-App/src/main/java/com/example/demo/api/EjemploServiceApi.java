@@ -15,9 +15,9 @@ import com.example.demo.api.request.ChangePasswordRequest;
 import com.example.demo.api.request.LoginRequest;
 import com.example.demo.api.request.UsuarioDTO;
 import com.example.demo.api.request.UsuarioDetalleDTO;
+import com.example.demo.model.RegistroPractica;
+import com.example.demo.model.Usuario;
 import com.example.demo.service.UserService;
-import com.example.model.RegistroPractica;
-import com.example.model.Usuario;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
