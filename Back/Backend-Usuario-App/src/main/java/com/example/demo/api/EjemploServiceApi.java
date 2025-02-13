@@ -1,5 +1,7 @@
 package com.example.demo.api;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,6 +12,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.api.request.ChangePasswordRequest;
+import com.example.demo.api.request.LoginRequest;
+import com.example.demo.api.request.UsuarioDTO;
+import com.example.demo.api.request.UsuarioDetalleDTO;
+import com.example.demo.model.RegistroPractica;
 import com.example.demo.model.Usuario;
 import com.example.demo.service.UserService;
 
@@ -26,10 +32,12 @@ public class EjemploServiceApi {
 	@Autowired
 	private UserService service;
 
-	@PostMapping
-	@Operation(summary = "hace Login de user", description = "hace login con userName y password")
-	public Usuario login(@RequestParam String user, @RequestParam String password ) {
-		return service.login(user,password);
+	@PostMapping("/login")
+    @Operation(summary = "Login de usuario", description = "Autentica al usuario y devuelve un token JWT")
+	public UsuarioDTO login(@RequestBody @Valid LoginRequest request) {
+		Usuario usuario = service.login(request.getUsername(),request.getPassword());
+		UsuarioDTO dto = new UsuarioDTO(usuario, service.consultarDetalles(usuario.getId()));
+		return dto;
 	}
 
 	@PutMapping
@@ -39,14 +47,8 @@ public class EjemploServiceApi {
 	}
 
 	@GetMapping
-	@Operation(summary = "Consultar Datos Usuario", description = "consluta los datos del Usuario")
-	public Usuario verDatos(@PathVariable Long idUser) {
-		return service.verDatos(idUser);
-	}
-
-	@GetMapping
 	@Operation(summary = "Consultar detalle user", description = "devuelve el alumno por id")
-	public Usuario consultarDetalles(@PathVariable Long idUser) {
+	public List<RegistroPractica> consultarDetalles(@PathVariable Long idUser) {
 		return service.consultarDetalles(idUser);
 	}
 
