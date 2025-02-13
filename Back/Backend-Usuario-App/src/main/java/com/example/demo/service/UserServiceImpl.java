@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
+import org.springframework.stereotype.Service;
 
 import com.example.demo.model.RegistroPractica;
 import com.example.demo.model.Usuario;
@@ -16,7 +17,7 @@ import com.example.demo.repositories.UserRepository;
 
 import jakarta.transaction.Transactional;
 import jakarta.validation.constraints.Size;
-
+@Service
 public class UserServiceImpl implements UserService {
 
 	private static final Logger log = LoggerFactory.getLogger(UserServiceImpl.class);
@@ -117,10 +118,5 @@ public class UserServiceImpl implements UserService {
 		}
 	}
 
-	@Override
-	public Integer horasTotales(Long id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }
