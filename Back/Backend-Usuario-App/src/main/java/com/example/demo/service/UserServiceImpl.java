@@ -81,4 +81,10 @@ public class UserServiceImpl implements UserService {
 		return null;
 	}
 
+	@Override
+	public Integer horasTotales(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
