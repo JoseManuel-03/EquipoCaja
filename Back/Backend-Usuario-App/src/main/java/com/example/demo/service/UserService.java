@@ -15,8 +15,6 @@ public interface UserService {
 	public void cambiarContraseña(Long getID, String getOldPassword, @Size(min = 8) String newPassword)
 			throws UserUnauthorizedException, UserNotFoundException;
 
-	public Integer horasTotales(Long id);
-
 	public List<RegistroPractica> consultarDetalles(Long idUser) throws UserUnauthorizedException, UserNotFoundException;
 
 	
