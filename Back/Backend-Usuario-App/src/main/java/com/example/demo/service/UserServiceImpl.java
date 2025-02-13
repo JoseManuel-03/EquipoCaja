@@ -96,7 +96,15 @@ public class UserServiceImpl implements UserService {
 		log.debug("Consultando detalles del usuario con id " + idUser);
 		try {
 
-			List<RegistroPractica> lista = registroRepository.findByUsuarioId(idUser);
+			Optional<Usuario> alumnoOpt = userRepository.findById(idUser);
+
+			if (!alumnoOpt.isPresent()) {
+				log.warn("El usuario indicado no existe con id " + idUser);
+				throw new UserNotFoundException("Usuario no encontrado");
+			}
+			Usuario usuario = alumnoOpt.get();
+
+			List<RegistroPractica> lista = registroRepository.findByAlumno(usuario.getUsuarioAsociado());
 			if (lista.isEmpty()) {
 				log.warn("El usuario indicado no existe con id " + idUser);
 				throw new UserNotFoundException("Usuario no encontrado");
