@@ -9,6 +9,8 @@ import com.example.demo.model.RegistroPractica;
 
 public interface RegistroRepository extends JpaRepository<RegistroPractica, Long>{
 	
-	public Optional findById(Long id);
+
+	public List<RegistroPractica> findByUsuarioId(Long usuarioId); 
+
 
 }

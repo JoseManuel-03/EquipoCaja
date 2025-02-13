@@ -29,6 +29,7 @@ public class Usuario {
 
 	@ManyToOne
 	@JoinColumn(name = "usuario_asociado",nullable = false)
+
 	private Alumno usuarioAsociado;
 
 	@Column(nullable = false)
