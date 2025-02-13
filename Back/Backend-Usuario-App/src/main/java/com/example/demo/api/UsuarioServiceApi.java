@@ -1,6 +1,8 @@
 package com.example.demo.api;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,10 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.api.request.ChangePasswordRequest;
 import com.example.demo.api.request.LoginRequest;
 import com.example.demo.api.request.UsuarioDTO;
-import com.example.demo.api.request.UsuarioDetalleDTO;
 import com.example.demo.model.RegistroPractica;
 import com.example.demo.model.Usuario;
+import com.example.demo.service.UserNotFoundException;
 import com.example.demo.service.UserService;
+import com.example.demo.service.UserUnauthorizedException;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
@@ -27,29 +30,35 @@ import jakarta.validation.Valid;
 @RestController
 @RequestMapping("/api/users")
 @SecurityRequirement(name = "Authorization")
-public class EjemploServiceApi {
+public class UsuarioServiceApi {
 
 	@Autowired
 	private UserService service;
 
 	@PostMapping("/login")
-    @Operation(summary = "Login de usuario", description = "Autentica al usuario y devuelve un token JWT")
-	public UsuarioDTO login(@RequestBody @Valid LoginRequest request) {
-		Usuario usuario = service.login(request.getUsername(),request.getPassword());
-		UsuarioDTO dto = new UsuarioDTO(usuario, service.consultarDetalles(usuario.getId()));
-		return dto;
+	@Operation(summary = "Login de usuario", description = "Autentica al usuario y devuelve un token JWT")
+	public UsuarioDTO login(@RequestBody @Valid LoginRequest request)
+	        throws UserNotFoundException, UserUnauthorizedException {
+	    Usuario usuario = service.login(request.getUsername(), request.getPassword());
+	    List<RegistroPractica> registros = service.consultarDetalles(usuario.getId());
+	    return new UsuarioDTO(usuario, registros);
 	}
+
 
 	@PutMapping
 	@Operation(summary = "Cambia el pasword de User", description = "cambiael pasword")
-	public void cambiarContraseña(@RequestBody @Valid ChangePasswordRequest request) {
-		service.cambiarContraseña(request.getID, request.getOldPassword, request.newPassword);
+	public void cambiarContraseña(@RequestBody @Valid ChangePasswordRequest request)
+			throws UserUnauthorizedException, UserNotFoundException {
+		service.cambiarContraseña(request.getId(), request.getOldPassword(), request.getNewPassword());
 	}
 
-	@GetMapping
-	@Operation(summary = "Consultar detalle user", description = "devuelve el alumno por id")
-	public List<RegistroPractica> consultarDetalles(@PathVariable Long idUser) {
-		return service.consultarDetalles(idUser);
+	@GetMapping("/{idUser}")
+	@Operation(summary = "Consultar detalle user", description = "Devuelve el detalle del usuario por ID")
+	public List<RegistroPractica> consultarDetalles(@PathVariable Long idUser)
+	        throws UserUnauthorizedException, UserNotFoundException {
+	    return Optional.ofNullable(service.consultarDetalles(idUser))
+	                   .orElse(Collections.emptyList());
 	}
+
 
 }
