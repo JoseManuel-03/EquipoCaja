@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.api.request.ChangePasswordRequest;
@@ -56,8 +57,8 @@ public class UsuarioServiceApi {
 
 	@GetMapping("/{idUser}")
 	@Operation(summary = "Consultar detalle user", description = "Devuelve el detalle del usuario por ID")
-	public ResponseEntity<List<RegistroPractica>> consultarDetalles(@PathVariable Long idUser, LocalDate fecha1,
-			LocalDate fecha2) throws UserUnauthorizedException, UserNotFoundException {
+	public ResponseEntity<List<RegistroPractica>> consultarDetalles(@PathVariable Long idUser, @RequestParam(required = false) LocalDate fecha1,
+			 @RequestParam(required = false) LocalDate fecha2) throws UserUnauthorizedException, UserNotFoundException {
 		return ResponseEntity.ok(
 				Optional.ofNullable(service.consultarDetalles(idUser, fecha1, fecha2)).orElse(Collections.emptyList()));
 	}
