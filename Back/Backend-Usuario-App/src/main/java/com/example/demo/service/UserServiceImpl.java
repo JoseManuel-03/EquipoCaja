@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -91,7 +92,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public List<RegistroPractica> consultarDetalles(Long idUser)
+	public List<RegistroPractica> consultarDetalles(Long idUser,LocalDate fecha1,LocalDate fecha2)
 			throws UserUnauthorizedException, UserNotFoundException {
 		log.debug("Consultando detalles del usuario con id " + idUser);
 		try {
@@ -117,5 +118,15 @@ public class UserServiceImpl implements UserService {
 		}
 	}
 
+	@Override
+	public void borrarRegistro(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
 
+	@Override
+	public void crearRegistro(RegistroPractica registro) {
+		// TODO Auto-generated method stub
+		
+	}
 }
