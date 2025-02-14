@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import main.App;
+import main.controllers.AltaRegistroContorller;
 import main.controllers.CambiarContraseñaController;
 import main.controllers.ConsultarRegistroController;
 import main.controllers.LoginController;
@@ -21,6 +22,8 @@ public class AppController {
 	public static final String FXML_VERDATOS = "/fxml/verDatos.fxml";
 	public static final String FXML_CAMBIARCONTRASEÑA = "/fxml/cambiarContraseña.fxml";
 	public static final String FXML_CONSULTARREGISTRO = "/fxml/consultarRegistro.fxml";
+	public static final String FXML_REGISTROHORAS = "/fxml/registroHoras.fxml";
+	public static final String FXML_ALTAREGISTRO = "/fxml/altaRegistro.fxml";
 	private static Stage primaryStage;
 
 	
@@ -47,22 +50,26 @@ public class AppController {
             	menuController.setStage(primaryStage);  // Pasamos el Stage
             }
             else if (controller instanceof ConsultarRegistroController) {
-            	ConsultarRegistroController loginController = (ConsultarRegistroController) controller;
-                loginController.setStage(primaryStage);  // Pasamos el Stage
+            	ConsultarRegistroController consultarRegistroController = (ConsultarRegistroController) controller;
+                consultarRegistroController.setStage(primaryStage);  // Pasamos el Stage
             }
             else if (controller instanceof VerDatosController) {
-            	VerDatosController loginController = (VerDatosController) controller;
-                loginController.setStage(primaryStage);  // Pasamos el Stage
+            	VerDatosController verDatosController = (VerDatosController) controller;
+                verDatosController.setStage(primaryStage);  // Pasamos el Stage
             }
             else if (controller instanceof CambiarContraseñaController) {
-            	CambiarContraseñaController loginController = (CambiarContraseñaController) controller;
-                loginController.setStage(primaryStage);  // Pasamos el Stage
+            	CambiarContraseñaController cambiarContraseñasController = (CambiarContraseñaController) controller;
+                cambiarContraseñasController.setStage(primaryStage);  // Pasamos el Stage
             }
             else if (controller instanceof RegistroHorasController) {
-            	RegistroHorasController loginController = (RegistroHorasController) controller;
-                loginController.setStage(primaryStage);  // Pasamos el Stage
+            	RegistroHorasController registroHorasController = (RegistroHorasController) controller;
+                registroHorasController.setStage(primaryStage);  // Pasamos el Stage
             }
-
+            else if (controller instanceof AltaRegistroContorller) {
+            	AltaRegistroContorller altaRegistroController = (AltaRegistroContorller) controller;
+                altaRegistroController.setStage(primaryStage);  // Pasamos el Stage
+            }
+          
             primaryStage.setScene(scene);
         } catch (IOException e) {
             throw new RuntimeException("Error cambiando escena.", e);

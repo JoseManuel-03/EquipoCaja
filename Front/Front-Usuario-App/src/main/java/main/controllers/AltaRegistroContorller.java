@@ -1,17 +1,14 @@
 package main.controllers;
 
 import javafx.event.ActionEvent;
-
 import javafx.fxml.FXML;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import main.gui.AppController;
 
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-
-public class ConsultarRegistroController extends AppController {
+public class AltaRegistroContorller extends AppController {
 
 	 private Stage stage;  // Necesario para controlar la ventana
 
@@ -20,34 +17,18 @@ public class ConsultarRegistroController extends AppController {
 	        this.stage = stage;
 	    }
     @FXML
-    private TableColumn<?, ?> ColumnaFechas;
+    private DatePicker datePicker;
 
     @FXML
-    private TableColumn<?, ?> columnaDescripcion;
+    private TextArea textAreaDetalleRegistro;
 
     @FXML
-    private TableColumn<?, ?> columnaHorasRegistradas;
+    private TextField textFieldHoras;
 
-    @FXML
-    private ComboBox<?> comoboBox;
-
-    @FXML
-    private DatePicker datePickerDesde;
-
-    @FXML
-    private DatePicker datePickerHasta;
-
-    @FXML
-    private TableView<?> tabla;
-
-    @FXML
-    void altaRegistro(ActionEvent event) {
-    	changeScene(FXML_ALTAREGISTRO);
-    }
 
 
     @FXML
-    void consultarEntreFechas(ActionEvent event) {
+    void guardarRegistro(ActionEvent event) {
 
     }
 
@@ -72,6 +53,5 @@ public class ConsultarRegistroController extends AppController {
         }
     }
 
- 
-
 }
+

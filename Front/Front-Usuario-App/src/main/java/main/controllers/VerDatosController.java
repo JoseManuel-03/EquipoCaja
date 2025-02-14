@@ -47,12 +47,13 @@ public class VerDatosController extends AppController {
 
     @FXML
     void irMenu(ActionEvent event) {
+    	changeScene(FXML_MENU);
 
     }
 
     @FXML
     void irRegistroHoras(ActionEvent event) {
-
+    	changeScene(FXML_REGISTROHORAS);
     }
     
     @FXML
