@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,6 +18,7 @@ import com.example.demo.repositories.UserRepository;
 
 import jakarta.transaction.Transactional;
 import jakarta.validation.constraints.Size;
+
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -40,7 +42,7 @@ public class UserServiceImpl implements UserService {
 			}
 
 			Usuario usuario = usuarioOpt.get();
-			
+
 			if (!usuario.getContraseña().equals(password)) {
 				log.debug("El usuario: " + user + " sin autorización");
 				throw new UserUnauthorizedException("Password de usuario incorrecta");
@@ -78,7 +80,6 @@ public class UserServiceImpl implements UserService {
 				throw new UserUnauthorizedException("El password no es correcto");
 			}
 
-			
 			usuario.setContraseña(newPassword);
 			userRepository.save(usuario);
 			log.debug("Password cambiada con exito");
@@ -91,7 +92,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public List<RegistroPractica> consultarDetalles(Long idUser)
+	public List<RegistroPractica> consultarDetalles(Long idUser, LocalDate fechaInicio, LocalDate fechaFin)
 			throws UserUnauthorizedException, UserNotFoundException {
 		log.debug("Consultando detalles del usuario con id " + idUser);
 		try {
@@ -103,6 +104,17 @@ public class UserServiceImpl implements UserService {
 				throw new UserNotFoundException("Usuario no encontrado");
 			}
 			Usuario usuario = alumnoOpt.get();
+
+			if (fechaInicio == null) {
+
+				fechaInicio = LocalDate.of(01, 01, 1901);
+
+			}
+			if (fechaFin == null) {
+
+				fechaFin = LocalDate.of(01, 01, 2901);
+
+			}
 
 			List<RegistroPractica> lista = registroRepository.findByAlumno(usuario.getUsuarioAsociado());
 			if (lista.isEmpty()) {
@@ -117,5 +129,32 @@ public class UserServiceImpl implements UserService {
 		}
 	}
 
+	@Override
+	public void crearRegistro(RegistroPractica registroPractica) throws UserUnauthorizedException {
+		log.error("Creando el registro practica ");
+		try {
+
+			registroRepository.save(registroPractica);
+
+		} catch (DataAccessException e) {
+			log.error("Error al crear el registro practica ", e);
+			throw new UserUnauthorizedException("No autorizado");
+		}
+
+	}
+
+	@Override
+	public void borrarRegistro(Long id) throws UserUnauthorizedException {
+		log.error("Borrando el registro practica ");
+		try {
+
+			registroRepository.deleteById(id);
+
+		} catch (DataAccessException e) {
+			log.error("Error al borrar el registro practica ", e);
+			throw new UserUnauthorizedException("No autorizado");
+		}
+
+	}
 
 }
