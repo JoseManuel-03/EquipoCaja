@@ -51,10 +51,6 @@ public class MenuController extends AppController {
         }
     }
     
-    @FXML
-    void cambiarEscenaComboBox(ActionEvent event) {
-
-    }
 
     @FXML
     void minimizar(ActionEvent event) {
@@ -70,6 +66,11 @@ public class MenuController extends AppController {
         if (stage != null) {
             stage.close();  // Cierra la ventana
         }
+    }
+    
+    @FXML
+    void cerrarSesion(ActionEvent event) {
+    	changeScene(FXML_LOGIN);
     }
 
 

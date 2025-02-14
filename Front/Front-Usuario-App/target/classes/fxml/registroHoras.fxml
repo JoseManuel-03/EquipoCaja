@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.RegistroHorasController">
+   <children>
+      <TextField fx:id="textFieldHorasRealizadas" layoutX="226.0" layoutY="142.0" />
+      <Label layoutX="84.0" layoutY="146.0" text="Horas realizadas:" />
+      <Label fx:id="labelPorcentajeSobreTotal" layoutX="402.0" layoutY="146.0" text="Label" />
+      <Label layoutX="84.0" layoutY="208.0" text="Horas total a realizar:" />
+      <Label fx:id="labelHorasTotal" alignment="CENTER" layoutX="240.0" layoutY="208.0" prefHeight="17.0" prefWidth="121.0" text="Label" />
+      <Label layoutX="84.0" layoutY="256.0" text="Horas pendiente a realizar:" />
+      <Label fx:id="labelHorasPendientesRealizar" layoutX="286.0" layoutY="256.0" text="Label" />
+      <Button cancelButton="true" layoutX="553.0" layoutY="14.0" mnemonicParsing="false" onAction="#cerrar" prefHeight="25.0" prefWidth="33.0" text="X" />
+      <Button layoutX="520.0" layoutY="14.0" mnemonicParsing="false" onAction="#minimizar" prefHeight="25.0" prefWidth="33.0" text="—" />
+      <Button layoutX="22.0" layoutY="361.0" mnemonicParsing="false" onAction="#irMenu" text="Volver" />
+      <Button layoutX="274.0" layoutY="349.0" mnemonicParsing="false" onAction="#actualizar" text="Actualizar" />
+   </children>
+</Pane>

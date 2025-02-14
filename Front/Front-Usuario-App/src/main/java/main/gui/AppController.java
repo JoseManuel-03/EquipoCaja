@@ -12,6 +12,7 @@ import main.controllers.CambiarContraseñaController;
 import main.controllers.ConsultarRegistroController;
 import main.controllers.LoginController;
 import main.controllers.MenuController;
+import main.controllers.RegistroHorasController;
 import main.controllers.VerDatosController;
 
 public class AppController {
@@ -42,8 +43,8 @@ public class AppController {
                 loginController.setStage(primaryStage);  // Pasamos el Stage
             }
             else if (controller instanceof MenuController) {
-            	MenuController loginController = (MenuController) controller;
-                loginController.setStage(primaryStage);  // Pasamos el Stage
+            	MenuController menuController = (MenuController) controller;
+            	menuController.setStage(primaryStage);  // Pasamos el Stage
             }
             else if (controller instanceof ConsultarRegistroController) {
             	ConsultarRegistroController loginController = (ConsultarRegistroController) controller;
@@ -55,6 +56,10 @@ public class AppController {
             }
             else if (controller instanceof CambiarContraseñaController) {
             	CambiarContraseñaController loginController = (CambiarContraseñaController) controller;
+                loginController.setStage(primaryStage);  // Pasamos el Stage
+            }
+            else if (controller instanceof RegistroHorasController) {
+            	RegistroHorasController loginController = (RegistroHorasController) controller;
                 loginController.setStage(primaryStage);  // Pasamos el Stage
             }
 
