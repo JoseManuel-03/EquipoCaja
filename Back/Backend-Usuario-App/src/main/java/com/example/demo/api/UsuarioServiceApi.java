@@ -65,14 +65,14 @@ public class UsuarioServiceApi {
 	@PostMapping("/registro")
 	@Operation(summary = "Crear Registro", description = "Crea un nuevo registro de práctica.")
 	public ResponseEntity<String> crearRegistro(@RequestBody @Valid RegistroPractica registro) {
-		service.crearRegistro(registro);
+		//service.crearRegistro(registro);
 		return ResponseEntity.ok("Registro creado exitosamente");
 	}
 
 	@DeleteMapping("/registro/{id}")
 	@Operation(summary = "Borrar Registro", description = "Elimina un registro de práctica por ID.")
 	public ResponseEntity<String> borrarRegistro(@PathVariable Long id) {
-		service.borrarRegistro(id);
+		//service.borrarRegistro(id);
 		return ResponseEntity.ok("Registro eliminado exitosamente");
 	}
 

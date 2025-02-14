@@ -118,15 +118,5 @@ public class UserServiceImpl implements UserService {
 		}
 	}
 
-	@Override
-	public void borrarRegistro(Long id) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void crearRegistro(RegistroPractica registro) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 }

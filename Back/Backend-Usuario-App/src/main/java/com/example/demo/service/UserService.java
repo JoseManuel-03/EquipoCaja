@@ -18,10 +18,6 @@ public interface UserService {
 
 	public List<RegistroPractica> consultarDetalles(Long idUser, LocalDate fecha1, LocalDate fecha2) throws UserUnauthorizedException, UserNotFoundException;
 
-	public void crearRegistro(RegistroPractica registro);
-
-	public void borrarRegistro(Long id);
-
 
 	
 }
