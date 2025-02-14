@@ -47,6 +47,7 @@ public class LoginController extends AppController {
         System.out.println("Validar presionado!");
         Platform.exit();  // Cierra la aplicación (como ejemplo)
     }
+    
 
 
 }

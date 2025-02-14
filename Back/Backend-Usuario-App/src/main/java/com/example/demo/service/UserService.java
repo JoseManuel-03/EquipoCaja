@@ -16,8 +16,10 @@ public interface UserService {
 	public void cambiarContraseña(Long getID, String getOldPassword, @Size(min = 8) String newPassword)
 			throws UserUnauthorizedException, UserNotFoundException;
 
-	public List<RegistroPractica> consultarDetalles(Long idUser, LocalDate fecha1, LocalDate fecha2) throws UserUnauthorizedException, UserNotFoundException;
+	public List<RegistroPractica> consultarDetalles(Long idUser, LocalDate fechaInicio, LocalDate fechaFin)
+			throws UserUnauthorizedException, UserNotFoundException;
 
+	public void crearRegistro(RegistroPractica registroPractica) throws UserUnauthorizedException;
 
-	
+	public void borrarRegistro(Long id) throws UserUnauthorizedException;
 }

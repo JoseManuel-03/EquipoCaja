@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.MenuController">
    <children>
       <Label layoutX="260.0" layoutY="42.0" text="Menu">
@@ -14,8 +13,8 @@
             <Font size="31.0" />
          </font>
       </Label>
-      <Button layoutX="41.0" layoutY="17.0" mnemonicParsing="false" text="Cerrar sesión" />
-      <ComboBox fx:id="comboBox" layoutX="225.0" layoutY="143.0" onAction="#cambiarEscenaComboBox" prefWidth="150.0" />
+      <Button layoutX="41.0" layoutY="17.0" mnemonicParsing="false" onAction="#cerrarSesion" text="Cerrar sesión" />
+      <ComboBox fx:id="comboBox" layoutX="225.0" layoutY="143.0" prefWidth="150.0" />
       <Button cancelButton="true" layoutX="560.0" layoutY="5.0" mnemonicParsing="false" onAction="#cerrar" prefHeight="25.0" prefWidth="33.0" text="X" />
       <Button layoutX="527.0" layoutY="5.0" mnemonicParsing="false" onAction="#minimizar" prefHeight="25.0" prefWidth="33.0" text="—" />
    </children>

@@ -3,58 +3,42 @@ package main.controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import main.gui.AppController;
 
-public class VerDatosController extends AppController {
+public class RegistroHorasController extends AppController {
 
-	
 	private Stage stage;  // Necesario para controlar la ventana
 
     // Método para inicializar el Stage, pasarlo al controlador
     public void setStage(Stage stage) {
         this.stage = stage;
     }
-    
     @FXML
-    private Label labelActivoUsuario;
+    private Label labelHorasPendientesRealizar;
 
     @FXML
-    private Label labelAñoCursoAlumno;
+    private Label labelHorasTotal;
 
     @FXML
-    private Label labelCicloAlumno;
+    private Label labelPorcentajeSobreTotal;
 
     @FXML
-    private Label labelEmpresaAsignadaALumno;
+    private TextField textFieldHorasRealizadas;
 
     @FXML
-    private Label labelEvaluacionAlumno;
+    void actualizar(ActionEvent event) {
 
-    @FXML
-    private Label labelNombreALumno;
+    }
 
-    @FXML
-    private Label labelNombreUsuario;
-
-    @FXML
-    private Label labelPerfilUsuario;
-
-    @FXML
-    private Label labelTutorDocenteAlumno;
-
-  
 
     @FXML
     void irMenu(ActionEvent event) {
+    	changeScene(FXML_MENU);
 
     }
 
-    @FXML
-    void irRegistroHoras(ActionEvent event) {
-
-    }
-    
     @FXML
     void minimizar(ActionEvent event) {
         if (stage != null) {
@@ -69,11 +53,6 @@ public class VerDatosController extends AppController {
         if (stage != null) {
             stage.close();  // Cierra la ventana
         }
-    }
-
-    
-    public void initialize() {
-    	
     }
 
 }
