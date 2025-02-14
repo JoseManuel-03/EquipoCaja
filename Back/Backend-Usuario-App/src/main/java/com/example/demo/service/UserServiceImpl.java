@@ -91,8 +91,9 @@ public class UserServiceImpl implements UserService {
 
 	}
 
-	@Override
+
 	public List<RegistroPractica> consultarDetalles(Long idUser, LocalDate fechaInicio, LocalDate fechaFin)
+
 			throws UserUnauthorizedException, UserNotFoundException {
 		log.debug("Consultando detalles del usuario con id " + idUser);
 		try {
