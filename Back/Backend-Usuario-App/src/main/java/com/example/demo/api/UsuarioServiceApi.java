@@ -64,14 +64,14 @@ public class UsuarioServiceApi {
 
 	@PostMapping("/registro")
 	@Operation(summary = "Crear Registro", description = "Crea un nuevo registro de práctica.")
-	public ResponseEntity<String> crearRegistro(@RequestBody @Valid RegistroPractica registro) {
+	public ResponseEntity<String> crearRegistro(@RequestBody @Valid RegistroPractica registro) throws UserUnauthorizedException {
 		service.crearRegistro(registro);
 		return ResponseEntity.ok("Registro creado exitosamente");
 	}
 
 	@DeleteMapping("/registro/{id}")
 	@Operation(summary = "Borrar Registro", description = "Elimina un registro de práctica por ID.")
-	public ResponseEntity<String> borrarRegistro(@PathVariable Long id) {
+	public ResponseEntity<String> borrarRegistro(@PathVariable Long id) throws UserUnauthorizedException {
 		service.borrarRegistro(id);
 		return ResponseEntity.ok("Registro eliminado exitosamente");
 	}
