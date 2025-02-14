@@ -108,12 +108,12 @@ public class UserServiceImpl implements UserService {
 
 			if (fechaInicio == null) {
 
-				fechaInicio = LocalDate.of(01, 01, 1901);
+				fechaInicio = LocalDate.of(1901, 01, 01);
 
 			}
 			if (fechaFin == null) {
 
-				fechaFin = LocalDate.of(01, 01, 2901);
+				fechaFin = LocalDate.of(2901, 01, 01);
 
 			}
 
@@ -134,7 +134,6 @@ public class UserServiceImpl implements UserService {
 	public void crearRegistro(RegistroPractica registroPractica) throws UserUnauthorizedException {
 		log.error("Creando el registro practica ");
 		try {
-
 			registroRepository.save(registroPractica);
 
 		} catch (DataAccessException e) {
