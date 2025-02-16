@@ -20,5 +20,10 @@
 			<version>1.18.34</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+     <groupId>api-client</groupId>
+    <artifactId>api-client</artifactId>
+    <version>v0</version>
+    </dependency>
 	</dependencies>
 </project>

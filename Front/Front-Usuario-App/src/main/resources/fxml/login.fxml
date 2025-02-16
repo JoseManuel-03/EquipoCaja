@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.LoginController">
    <children>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="142.0" layoutY="134.0" prefHeight="33.0" prefWidth="72.0" text="Usuario:" textAlignment="CENTER">
@@ -29,5 +28,6 @@
       </Label>
       <Button cancelButton="true" layoutX="567.0" layoutY="2.0" mnemonicParsing="false" onAction="#cerrar" prefHeight="25.0" prefWidth="33.0" text="X" />
       <Button layoutX="534.0" layoutY="2.0" mnemonicParsing="false" onAction="#minimizar" prefHeight="25.0" prefWidth="33.0" text="—" />
+      <Label fx:id="textoError" alignment="CENTER" layoutX="150.0" layoutY="245.0" prefHeight="25.0" prefWidth="331.0" textFill="#d70707" />
    </children>
 </Pane>

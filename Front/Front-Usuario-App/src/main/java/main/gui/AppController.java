@@ -11,6 +11,7 @@ import main.App;
 import main.controllers.AltaRegistroContorller;
 import main.controllers.CambiarContraseñaController;
 import main.controllers.ConsultarRegistroController;
+import main.controllers.DetalleRegistroController;
 import main.controllers.LoginController;
 import main.controllers.MenuController;
 import main.controllers.RegistroHorasController;
@@ -24,6 +25,7 @@ public class AppController {
 	public static final String FXML_CONSULTARREGISTRO = "/fxml/consultarRegistro.fxml";
 	public static final String FXML_REGISTROHORAS = "/fxml/registroHoras.fxml";
 	public static final String FXML_ALTAREGISTRO = "/fxml/altaRegistro.fxml";
+	public static final String FXML_DETALLEREGISTRO = "/fxml/detalleRegistro.fxml";
 	private static Stage primaryStage;
 
 	
@@ -68,6 +70,10 @@ public class AppController {
             else if (controller instanceof AltaRegistroContorller) {
             	AltaRegistroContorller altaRegistroController = (AltaRegistroContorller) controller;
                 altaRegistroController.setStage(primaryStage);  // Pasamos el Stage
+            }
+            else if (controller instanceof DetalleRegistroController) {
+            	DetalleRegistroController detalleRegistroController = (DetalleRegistroController) controller;
+                detalleRegistroController.setStage(primaryStage);  // Pasamos el Stage
             }
           
             primaryStage.setScene(scene);

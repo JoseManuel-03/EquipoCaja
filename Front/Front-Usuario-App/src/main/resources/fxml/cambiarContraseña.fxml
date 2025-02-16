@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.CambiarContraseñaController">
    <children>
       <Label layoutX="119.0" layoutY="126.0" text="Usuario:" />
@@ -15,7 +14,7 @@
       <TextField fx:id="textFieldUsuario" layoutX="269.0" layoutY="122.0" />
       <TextField fx:id="textFieldAntigua" layoutX="269.0" layoutY="188.0" />
       <TextField fx:id="textFieldNueva" layoutX="269.0" layoutY="249.0" />
-      <Button layoutX="269.0" layoutY="321.0" mnemonicParsing="false" onAction="#validar" text="Validar" />
+      <Button layoutX="274.0" layoutY="333.0" mnemonicParsing="false" onAction="#validar" text="Validar" />
       <Label alignment="CENTER" layoutX="201.0" layoutY="24.0" prefHeight="63.0" prefWidth="198.0" text="Cambiar Contraseña">
          <font>
             <Font size="16.0" />
@@ -24,5 +23,6 @@
       <Button layoutX="35.0" layoutY="346.0" mnemonicParsing="false" onAction="#irMenu" text="Volver" />
       <Button layoutX="532.0" layoutY="2.0" mnemonicParsing="false" onAction="#minimizar" prefHeight="25.0" prefWidth="33.0" text="—" />
       <Button cancelButton="true" layoutX="565.0" layoutY="2.0" mnemonicParsing="false" onAction="#cerrar" prefHeight="25.0" prefWidth="33.0" text="X" />
+      <Label fx:id="textoError" alignment="CENTER" layoutX="142.0" layoutY="292.0" prefHeight="31.0" prefWidth="309.0" textFill="RED" />
    </children>
 </Pane>

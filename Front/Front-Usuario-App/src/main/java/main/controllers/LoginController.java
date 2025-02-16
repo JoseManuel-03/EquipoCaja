@@ -1,10 +1,14 @@
 package main.controllers;
 
+import org.openapitools.client.model.UsuarioDTO;
+
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import main.apiService.*;
 import main.gui.AppController;
 
 
@@ -23,6 +27,15 @@ public class LoginController extends AppController {
 
     @FXML
     private TextField textFieldUsuario;
+    
+    @FXML
+    private Label textoError;
+    
+    private ApiService apiService;
+
+    public LoginController() {
+        this.apiService = new ApiService(); // Inicializa el servicio de API
+    }
 
     // Método para minimizar la ventana
     @FXML
@@ -43,9 +56,17 @@ public class LoginController extends AppController {
 
     @FXML
     void validar(ActionEvent event) {
-        // Lógica de validación o acción para el login
-        System.out.println("Validar presionado!");
-        Platform.exit();  // Cierra la aplicación (como ejemplo)
+    	String username = textFieldUsuario.getText();
+        String password = textFieldContraseña.getText();
+
+        UsuarioDTO usuarioDTO = apiService.login(username, password);
+        if (usuarioDTO != null) {
+            textoError.setText("Login exitoso! Bienvenido, " + usuarioDTO.getNombreCompleto());
+            addParam("usuario", usuarioDTO);
+            changeScene(FXML_MENU);
+        } else {
+            textoError.setText("Error en el login. Verifica tus credenciales.");
+        }
     }
     
 

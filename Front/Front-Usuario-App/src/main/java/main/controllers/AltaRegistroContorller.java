@@ -34,7 +34,7 @@ public class AltaRegistroContorller extends AppController {
 
     @FXML
     void irMenu(ActionEvent event) {
-    	changeScene(FXML_MENU);
+    	changeScene(FXML_CONSULTARREGISTRO);
     }
     
     @FXML

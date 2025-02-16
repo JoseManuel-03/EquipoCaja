@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="612.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.DetalleRegistroController">
+   <children>
+      <Label layoutX="101.0" layoutY="116.0" text="Fechas" />
+      <Label alignment="CENTER" layoutX="220.0" layoutY="25.0" prefHeight="71.0" prefWidth="161.0" text="Detalle Registro">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="533.0" layoutY="13.0" mnemonicParsing="false" onAction="#minimizar" prefHeight="25.0" prefWidth="33.0" text="—" />
+      <Button cancelButton="true" layoutX="566.0" layoutY="13.0" mnemonicParsing="false" onAction="#cerrar" prefHeight="25.0" prefWidth="33.0" text="X" />
+      <Button fx:id="botonBorrar" layoutX="253.0" layoutY="323.0" mnemonicParsing="false" text="Borrar Registro" />
+      <Label layoutX="101.0" layoutY="255.0" text="Descripcion" />
+      <Label layoutX="101.0" layoutY="165.0" text="Horas" />
+      <Label fx:id="labelFecha" alignment="CENTER" layoutX="235.0" layoutY="101.0" prefHeight="48.0" prefWidth="218.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelHoras" alignment="CENTER" layoutX="235.0" layoutY="158.0" prefHeight="48.0" prefWidth="218.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelDescripcion" alignment="CENTER" layoutX="195.0" layoutY="228.0" prefHeight="71.0" prefWidth="307.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
