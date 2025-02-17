@@ -17,7 +17,7 @@
       <Button layoutX="533.0" layoutY="13.0" mnemonicParsing="false" onAction="#minimizar" prefHeight="25.0" prefWidth="33.0" text="—" />
       <Button cancelButton="true" layoutX="566.0" layoutY="13.0" mnemonicParsing="false" onAction="#cerrar" prefHeight="25.0" prefWidth="33.0" text="X" />
       <Button fx:id="botonBorrar" layoutX="253.0" layoutY="323.0" mnemonicParsing="false" text="Borrar Registro" />
-      <Label layoutX="101.0" layoutY="255.0" text="Descripcion" />
+      <Label layoutX="101.0" layoutY="247.0" text="Descripcion" />
       <Label layoutX="101.0" layoutY="165.0" text="Horas" />
       <Label fx:id="labelFecha" alignment="CENTER" layoutX="235.0" layoutY="101.0" prefHeight="48.0" prefWidth="218.0">
          <font>
@@ -34,5 +34,6 @@
             <Font size="15.0" />
          </font>
       </Label>
+      <Button layoutX="23.0" layoutY="348.0" mnemonicParsing="false" onAction="#irMenu" text="Volver" />
    </children>
 </Pane>

@@ -50,6 +50,20 @@ public class ApiService {
             return null;
         }
     }
+    
+    //falta este metodo en el back
+    /*
+    public List<LocalDate> obtenerFechasDisponibles(Long idUsuario) {
+        try {
+            // Llama al servicio de la API para obtener las fechas disponibles
+            return service.
+        } catch (ApiException e) {
+            e.printStackTrace();
+            return null; // Manejo de errores
+        }
+    }
+    
+    */
 
     /**
      * Cifra una contraseña usando el algoritmo SHA-256.
