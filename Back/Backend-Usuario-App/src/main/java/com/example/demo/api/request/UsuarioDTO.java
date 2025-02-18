@@ -17,7 +17,7 @@ public class UsuarioDTO {
 	private String evaluacion;
 	private String docente;
 	private String empresaAsignada;
-	private Integer cantidadHoras;
+	private Double cantidadHoras;
 
 	public UsuarioDTO(Usuario user, List<RegistroPractica> list) {
 		this.id = user.getId();
@@ -34,7 +34,7 @@ public class UsuarioDTO {
 				? user.getUsuarioAsociado().getEmpresa().getNombreEmpresa()
 				: "Sin asignar";
 		this.cantidadHoras = (list != null)
-				? list.stream().mapToInt(r -> (r.getCantidadHoras() != null) ? r.getCantidadHoras() : 0).sum()
+				? list.stream().mapToDouble(r -> (r.getCantidadHoras() != null) ? r.getCantidadHoras() : 0).sum()
 				: 0;
 
 	}

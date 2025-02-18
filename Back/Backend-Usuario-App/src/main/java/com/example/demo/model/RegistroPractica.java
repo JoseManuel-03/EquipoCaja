@@ -28,7 +28,7 @@ public class RegistroPractica {
 	private FechaPractica fecha;
 
 	@Column(name = "cantidad_horas", nullable = false)
-	private Integer cantidadHoras;
+	private Double cantidadHoras;
 
 	@Column(nullable = false)
 	private String descripcion;

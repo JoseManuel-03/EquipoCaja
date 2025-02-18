@@ -73,11 +73,11 @@ public class UsuarioServiceApi {
 		return ResponseEntity.ok("Registro creado exitosamente");
 	}
 
-	@GetMapping("/{idUser}")
-	@Operation(summary = "Consultar detalle user", description = "Devuelve el detalle del usuario por ID")
+	@GetMapping("/{idUser}/registros")
+	@Operation(summary = "Consultar Fechas", description = "Devuelve todas la fechas disponibles para el usuario")
 	public ResponseEntity<List<FechaPractica>> consultarFechas(@PathVariable Long idUser, @RequestParam Integer anioCurso,
 			 @RequestParam String evaluacion) throws UserUnauthorizedException, UserNotFoundException {
-		return service.obtenerFechas(idUser,anioCurso,evaluacion);
+		return ResponseEntity.ok(service.obtenerFechas(idUser,anioCurso,evaluacion));
 	}
 
 	@DeleteMapping("/registro/{id}")
