@@ -152,10 +152,12 @@ public class VerDatosController extends AppController {
         double horasPendientes = horasTotales - horasRealizadas;
 
         // Muestra el resumen en los labels
+        /*
         labelTotalHoras.setText(String.format("%.2f horas", horasTotales));
         labelHorasRealizadas.setText(String.format("%.2f horas", horasRealizadas));
         labelPorcentajeHoras.setText(String.format("%.2f%%", porcentajeHoras));
         labelHorasPendientes.setText(String.format("%.2f horas", horasPendientes));
+        */
     }
 
     /**

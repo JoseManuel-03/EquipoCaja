@@ -9,7 +9,7 @@ public class App extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		AppController controller = new AppController(primaryStage);
-		controller.changeScene(AppController.FXML_MENU);
+		controller.changeScene(AppController.FXML_LOGIN);
 		primaryStage.setResizable(false);
 		primaryStage.setTitle("Aplicación de Horas");
 		primaryStage.initStyle(StageStyle.TRANSPARENT);

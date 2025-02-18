@@ -1,9 +1,11 @@
 package main.controllers;
+
 import org.openapitools.client.model.UsuarioDTO;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import main.apiService.ApiService;
@@ -19,10 +21,10 @@ public class CambiarContraseñaController extends AppController {
 	}
 
 	@FXML
-	private TextField textFieldAntigua;
+	private PasswordField textFieldAntigua;
 
 	@FXML
-	private TextField textFieldNueva;
+	private PasswordField textFieldNueva;
 
 	@FXML
 	private Label textoError;
@@ -82,7 +84,7 @@ public class CambiarContraseñaController extends AppController {
 		textFieldNueva.clear();
 
 	}
-	
+
 	public void initialize() {
 		textoError.setText("");
 	}
