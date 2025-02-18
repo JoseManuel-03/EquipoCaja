@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.api.request.ChangePasswordRequest;
 import com.example.demo.api.request.LoginRequest;
 import com.example.demo.api.request.UsuarioDTO;
+import com.example.demo.model.FechaPractica;
 import com.example.demo.model.RegistroPractica;
 import com.example.demo.model.Usuario;
 import com.example.demo.service.UserNotFoundException;
@@ -57,17 +58,26 @@ public class UsuarioServiceApi {
 
 	@GetMapping("/{idUser}")
 	@Operation(summary = "Consultar detalle user", description = "Devuelve el detalle del usuario por ID")
-	public ResponseEntity<List<RegistroPractica>> consultarDetalles(@PathVariable Long idUser, @RequestParam(required = false) LocalDate fecha1,
-			 @RequestParam(required = false) LocalDate fecha2) throws UserUnauthorizedException, UserNotFoundException {
+	public ResponseEntity<List<RegistroPractica>> consultarDetalles(@PathVariable Long idUser,
+			@RequestParam(required = false) LocalDate fecha1, @RequestParam(required = false) LocalDate fecha2)
+			throws UserUnauthorizedException, UserNotFoundException {
 		return ResponseEntity.ok(
 				Optional.ofNullable(service.consultarDetalles(idUser, fecha1, fecha2)).orElse(Collections.emptyList()));
 	}
 
 	@PostMapping("/registro")
 	@Operation(summary = "Crear Registro", description = "Crea un nuevo registro de práctica.")
-	public ResponseEntity<String> crearRegistro(@RequestBody @Valid RegistroPractica registro) throws UserUnauthorizedException {
+	public ResponseEntity<String> crearRegistro(@RequestBody @Valid RegistroPractica registro)
+			throws UserUnauthorizedException {
 		service.crearRegistro(registro);
 		return ResponseEntity.ok("Registro creado exitosamente");
+	}
+
+	@GetMapping("/{idUser}")
+	@Operation(summary = "Consultar detalle user", description = "Devuelve el detalle del usuario por ID")
+	public ResponseEntity<List<FechaPractica>> consultarFechas(@PathVariable Long idUser, @RequestParam Integer anioCurso,
+			 @RequestParam String evaluacion) throws UserUnauthorizedException, UserNotFoundException {
+		return service.obtenerFechas(idUser,anioCurso,evaluacion);
 	}
 
 	@DeleteMapping("/registro/{id}")
@@ -76,5 +86,4 @@ public class UsuarioServiceApi {
 		service.borrarRegistro(id);
 		return ResponseEntity.ok("Registro eliminado exitosamente");
 	}
-
 }
