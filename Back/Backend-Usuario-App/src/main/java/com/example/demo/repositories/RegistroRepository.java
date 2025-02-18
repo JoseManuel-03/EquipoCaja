@@ -12,6 +12,7 @@ import com.example.demo.model.RegistroPractica;
 public interface RegistroRepository extends JpaRepository<RegistroPractica, Long> {
 
 	public List<RegistroPractica> findByAlumno(Alumno alumno);
+	
 
 
 

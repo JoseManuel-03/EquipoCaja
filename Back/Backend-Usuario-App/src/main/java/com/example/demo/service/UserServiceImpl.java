@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -11,8 +12,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.model.FechaPractica;
 import com.example.demo.model.RegistroPractica;
 import com.example.demo.model.Usuario;
+import com.example.demo.repositories.FechaRepository;
 import com.example.demo.repositories.RegistroRepository;
 import com.example.demo.repositories.UserRepository;
 
@@ -29,6 +32,9 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private RegistroRepository registroRepository;
+
+	@Autowired
+	private FechaRepository fechaRepository;
 
 	@Override
 	public Usuario login(String user, String password) throws UserNotFoundException, UserUnauthorizedException {
@@ -90,7 +96,6 @@ public class UserServiceImpl implements UserService {
 		}
 
 	}
-
 
 	public List<RegistroPractica> consultarDetalles(Long idUser, LocalDate fechaInicio, LocalDate fechaFin)
 
@@ -156,6 +161,30 @@ public class UserServiceImpl implements UserService {
 			throw new UserUnauthorizedException("No autorizado");
 		}
 
+	}
+
+	@Override
+	public List<FechaPractica> obtenerFechas(Long id, Integer anioCurso, String eva) throws UserUnauthorizedException {
+		try {
+
+			Optional<RegistroPractica> optionalR = registroRepository.findById(id);
+			List<FechaPractica> lista = fechaRepository.findByAnioCursoAndEvaluacion(anioCurso, eva);
+			List<RegistroPractica> listaRegistro = optionalR.stream().toList();
+			List<FechaPractica> listaFechas = new ArrayList<FechaPractica>();
+
+			for (FechaPractica fechaPractica : lista) {
+				for (RegistroPractica registroPractica : listaRegistro) {
+					if (!(fechaPractica.getId().equals(registroPractica.getFecha().getId()))) {
+
+						listaFechas.add(fechaPractica);
+					}
+				}
+			}
+			return listaFechas;
+		} catch (DataAccessException e) {
+			log.error("Error al borrar el registro practica ", e);
+			throw new UserUnauthorizedException("No autorizado");
+		}
 	}
 
 }
