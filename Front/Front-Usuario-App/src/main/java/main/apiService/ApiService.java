@@ -5,6 +5,7 @@ import org.openapitools.client.ApiClient;
 import org.openapitools.client.ApiException;
 import org.openapitools.client.api.UsuarioServiceApiApi;
 import org.openapitools.client.model.ChangePasswordRequest;
+import org.openapitools.client.model.FechaPractica;
 import org.openapitools.client.model.LoginRequest;
 import org.openapitools.client.model.RegistroPractica;
 import org.openapitools.client.model.UsuarioDTO;
@@ -52,14 +53,17 @@ public class ApiService {
 		}
 	}
 
-	// falta este metodo en el back
-	/*
-	 * public List<LocalDate> obtenerFechasDisponibles(Long idUsuario) { try { //
-	 * Llama al servicio de la API para obtener las fechas disponibles return
-	 * service. } catch (ApiException e) { e.printStackTrace(); return null; //
-	 * Manejo de errores } }
-	 * 
-	 */
+	public List<FechaPractica> obtenerFechasDisponibles(Long idUsuario, Integer año, String evaluacion) {
+		try {
+
+			return service.consultarFechas(idUsuario, año, evaluacion);
+
+		} catch (ApiException e) {
+			e.printStackTrace();
+
+		}
+		return null;
+	}
 
 	/**
 	 * Cifra una contraseña usando el algoritmo SHA-256.
