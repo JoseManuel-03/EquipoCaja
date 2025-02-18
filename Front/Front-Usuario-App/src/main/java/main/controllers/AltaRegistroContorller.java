@@ -18,7 +18,7 @@ import main.apiService.ApiService;
 import main.gui.AppController;
 
 public class AltaRegistroContorller extends AppController {
-
+ 
 	    private Stage stage;  // Necesario para controlar la ventana
 
 	    @FXML
@@ -44,7 +44,7 @@ public class AltaRegistroContorller extends AppController {
 
 	        if (usuario != null) {
 	            // Obtén las fechas disponibles para el alumno
-	            List<LocalDate> fechasDisponibles = obtenerFechasDisponibles(usuario.getId());
+	            List<LocalDate> fechasDisponibles = apiService.consultarDetalles(null, null, null);
 
 	            // Configura el ComboBox con las fechas disponibles
 	            if (fechasDisponibles != null && !fechasDisponibles.isEmpty()) {
@@ -92,7 +92,7 @@ public class AltaRegistroContorller extends AppController {
 	        // Crea el objeto RegistroPractica
 	        RegistroPractica registro = new RegistroPractica();
 	        registro.setFecha(fechaSeleccionada);
-	        registro.setHoras(horas);
+	        registro.setCantidadHoras(horas);
 	        registro.setDescripcion(detalle);
 
 	        // Llama al servicio de la API para guardar el registro
