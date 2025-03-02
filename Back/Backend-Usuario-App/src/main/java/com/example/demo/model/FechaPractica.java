@@ -27,4 +27,6 @@ public class FechaPractica {
 
     @Column(nullable = false)
     private String evaluacion;
+
+    
 }

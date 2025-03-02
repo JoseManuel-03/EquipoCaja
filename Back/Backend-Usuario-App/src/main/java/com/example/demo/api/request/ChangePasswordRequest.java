@@ -10,5 +10,8 @@ public class ChangePasswordRequest {
     private String oldPassword;
     @Size(min = 8)
     private String newPassword;
+   
+    
+    
 }
 

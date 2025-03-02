@@ -24,6 +24,7 @@ public interface UserService {
 	public void crearRegistro(RegistroPractica registroPractica) throws UserUnauthorizedException;
 
 	public void borrarRegistro(Long id) throws UserUnauthorizedException;
-	
-	public List<FechaPractica> obtenerFechas(Long id, Integer anioCurso, String eva) throws UserUnauthorizedException;
+
+	public List<FechaPractica> obtenerFechas(Long id, Integer anioCurso, String eva, LocalDate fechaDesde,
+			LocalDate fechaHasta) throws UserUnauthorizedException;
 }

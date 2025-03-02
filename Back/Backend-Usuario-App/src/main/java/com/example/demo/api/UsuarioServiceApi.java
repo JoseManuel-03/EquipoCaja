@@ -75,9 +75,10 @@ public class UsuarioServiceApi {
 
 	@GetMapping("/{idUser}/registros")
 	@Operation(summary = "Consultar Fechas", description = "Devuelve todas la fechas disponibles para el usuario")
-	public ResponseEntity<List<FechaPractica>> consultarFechas(@PathVariable Long idUser, @RequestParam Integer anioCurso,
-			 @RequestParam String evaluacion) throws UserUnauthorizedException, UserNotFoundException {
-		return ResponseEntity.ok(service.obtenerFechas(idUser,anioCurso,evaluacion));
+	public ResponseEntity<List<FechaPractica>> consultarFechas(@PathVariable Long idUser,
+			@RequestParam Integer anioCurso, @RequestParam String evaluacion, @RequestParam LocalDate fechaInicio,
+			@RequestParam LocalDate fechaFin) throws UserUnauthorizedException, UserNotFoundException {
+		return ResponseEntity.ok(service.obtenerFechas(idUser, anioCurso, evaluacion, fechaInicio, fechaFin));
 	}
 
 	@DeleteMapping("/registro/{id}")

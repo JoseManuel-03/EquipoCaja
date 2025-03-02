@@ -28,10 +28,12 @@ public class Usuario {
 	private String perfil;
 
 	@ManyToOne
-	@JoinColumn(name = "usuario_asociado",nullable = false)
+	@JoinColumn(name = "usuario_asociado", nullable = false)
 
 	private Alumno usuarioAsociado;
 
 	@Column(nullable = false)
 	private Boolean activo;
+
+
 }

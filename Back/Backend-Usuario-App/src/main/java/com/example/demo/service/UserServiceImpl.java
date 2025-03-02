@@ -1,9 +1,14 @@
 package com.example.demo.service;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.apache.commons.codec.digest.DigestUtils;
 import org.slf4j.Logger;
@@ -163,25 +168,35 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public List<FechaPractica> obtenerFechas(Long id, Integer anioCurso, String eva) throws UserUnauthorizedException {
+	public List<FechaPractica> obtenerFechas(Long id, Integer anioCurso, String eva, LocalDate fechaDesde,
+			LocalDate fechaHasta) throws UserUnauthorizedException {
 		try {
-
-			Optional<RegistroPractica> optionalR = registroRepository.findById(id);
-			List<FechaPractica> lista = fechaRepository.findByAnioCursoAndEvaluacion(anioCurso, eva);
-			List<RegistroPractica> listaRegistro = optionalR.stream().toList();
-			List<FechaPractica> listaFechas = new ArrayList<FechaPractica>();
-
-			for (FechaPractica fechaPractica : lista) {
-				for (RegistroPractica registroPractica : listaRegistro) {
-					if (!(fechaPractica.getId().equals(registroPractica.getFecha().getId()))) {
-
-						listaFechas.add(fechaPractica);
-					}
-				}
+			if (fechaDesde == null || fechaHasta == null) {
+				throw new IllegalArgumentException("Las fechas desde y hasta son obligatorias");
 			}
-			return listaFechas;
+
+			List<LocalDate> todasLasFechas = Stream.iterate(fechaDesde, date -> date.plusDays(1))
+					.limit(ChronoUnit.DAYS.between(fechaDesde, fechaHasta) + 1).collect(Collectors.toList());
+
+			List<FechaPractica> fechasEnBD = fechaRepository.findByAnioCursoAndEvaluacion(anioCurso, eva);
+			Set<LocalDate> fechasRegistradas = fechasEnBD.stream().map(FechaPractica::getFecha)
+					.collect(Collectors.toSet());
+
+			List<LocalDate> fechasDisponibles = todasLasFechas.stream()
+					.filter(fecha -> !fechasRegistradas.contains(fecha)).collect(Collectors.toList());
+
+			List<FechaPractica> fechasPracticasDisponibles = fechasDisponibles.stream().map(fecha -> {
+				FechaPractica nuevaFecha = new FechaPractica();
+				nuevaFecha.setFecha(fecha);
+				nuevaFecha.setAnioCurso(anioCurso);
+				nuevaFecha.setEvaluacion(eva);
+
+				return nuevaFecha;
+			}).collect(Collectors.toList());
+
+			return fechasPracticasDisponibles;
 		} catch (DataAccessException e) {
-			log.error("Error al borrar el registro practica ", e);
+			log.error("Error al obtener las fechas de práctica", e);
 			throw new UserUnauthorizedException("No autorizado");
 		}
 	}
