@@ -118,12 +118,12 @@ public class UserServiceImpl implements UserService {
 
 			if (fechaInicio == null) {
 
-				fechaInicio = LocalDate.of(1901, 01, 01);
+				fechaInicio = LocalDate.of(2024, 01, 01);
 
 			}
 			if (fechaFin == null) {
 
-				fechaFin = LocalDate.of(2901, 01, 01);
+				fechaFin = LocalDate.of(2025, 03, 03);
 
 			}
 
@@ -171,8 +171,14 @@ public class UserServiceImpl implements UserService {
 	public List<FechaPractica> obtenerFechas(Long id, Integer anioCurso, String eva, LocalDate fechaDesde,
 			LocalDate fechaHasta) throws UserUnauthorizedException {
 		try {
-			if (fechaDesde == null || fechaHasta == null) {
-				throw new IllegalArgumentException("Las fechas desde y hasta son obligatorias");
+
+			if (fechaDesde == null) {
+				fechaDesde = LocalDate.of(2024, 01, 01);
+
+			}
+			if (fechaHasta == null) {
+				fechaHasta = LocalDate.of(2025, 03, 03);
+
 			}
 
 			List<LocalDate> todasLasFechas = Stream.iterate(fechaDesde, date -> date.plusDays(1))
