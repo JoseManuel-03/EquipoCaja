@@ -126,9 +126,9 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 
 -- Volcando datos para la tabla usuariocaja.usuarios: ~3 rows (aproximadamente)
 INSERT INTO `usuarios` (`id`, `nombre_usuario`, `contraseña`, `perfil`, `usuario_asociado`, `activo`) VALUES
-	(1, 'juanp', 'clave123', 'ALUMNO', 1, 1),
-	(2, 'marial', 'segura456', 'ALUMNO', 2, 1),
-	(3, 'carlosg', 'password789', 'ALUMNO', 3, 1);
+	(1, 'juanp', 'ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb', 'ALUMNO', 1, 1),
+	(2, 'marial', 'ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb', 'ALUMNO', 2, 1),
+	(3, 'carlosg', 'ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb', 'ALUMNO', 3, 1);
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
