@@ -8,23 +8,23 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="660.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.AltaRegistroContorller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="660.0" stylesheets="@../css/altaRegistro.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.AltaRegistroContorller">
    <children>
-      <Button layoutX="581.0" layoutY="15.0" mnemonicParsing="false" onAction="#minimizar" prefHeight="25.0" prefWidth="33.0" text="—" />
-      <Button cancelButton="true" layoutX="613.0" layoutY="15.0" mnemonicParsing="false" onAction="#cerrar" prefHeight="25.0" prefWidth="33.0" text="X" />
+      <Button layoutX="546.0" layoutY="15.0" mnemonicParsing="false" onAction="#minimizar" prefHeight="25.0" prefWidth="50.0" text="—" />
+      <Button cancelButton="true" layoutX="596.0" layoutY="15.0" mnemonicParsing="false" onAction="#cerrar" prefHeight="25.0" prefWidth="50.0" text="X" />
       <Button layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#irMenu" text="Volver" />
       <Label layoutX="231.0" layoutY="40.0" text="Alta de Registros">
          <font>
-            <Font size="20.0" />
+            <Font size="26.0" />
          </font>
       </Label>
       <TextField fx:id="textFieldHoras" layoutX="64.0" layoutY="91.0" promptText="Pon las horas" />
-      <TextArea fx:id="textAreaDetalleRegistro" layoutX="64.0" layoutY="141.0" prefHeight="186.0" prefWidth="373.0" promptText="Detalle del registro">
+      <TextArea fx:id="textAreaDetalleRegistro" layoutX="64.0" layoutY="141.0" prefHeight="170.0" prefWidth="327.0" promptText="Detalle del registro">
          <font>
             <Font size="14.0" />
          </font>
       </TextArea>
       <Button layoutX="284.0" layoutY="348.0" mnemonicParsing="false" onAction="#guardarRegistro" text="Guardar" />
-      <ComboBox fx:id="comboBoxFechasDisponibles" layoutX="479.0" layoutY="91.0" prefWidth="150.0" />
+      <ComboBox fx:id="comboBoxFechasDisponibles" layoutX="446.0" layoutY="87.0" prefWidth="150.0" />
    </children>
 </Pane>

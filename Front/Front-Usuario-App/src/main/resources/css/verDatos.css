@@ -1,0 +1,50 @@
+/* Estilo general del Pane */
+Pane {
+    -fx-background-color: linear-gradient(to bottom, #0073e6, #ffcc00);
+}
+
+/* Estilo para las etiquetas */
+Label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #ffffff; /* Blanco para contrastar con el fondo */
+    -fx-font-weight: bold;
+}
+
+/* Estilo para el título de Datos Usuario */
+Label:nth-child(11) { /* Cambiar el índice según la posición del título */
+    -fx-font-size: 22px;
+    -fx-text-fill: #fff;
+    -fx-font-weight: bold;
+}
+
+/* Estilo para el título de Datos Alumno */
+Label:nth-child(22) { /* Cambiar el índice según la posición del título */
+    -fx-font-size: 22px;
+    -fx-text-fill: #fff;
+    -fx-font-weight: bold;
+}
+
+/* Estilo para los botones */
+Button {
+    -fx-background-color: #005bb5;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 15px;
+    -fx-pref-height: 32px; /* Mantener tamaño original */
+    -fx-border-color: #003d82;
+    -fx-border-radius: 15px;
+    -fx-border-width: 2px;
+}
+
+/* Efecto hover en los botones */
+Button:hover {
+    -fx-background-color: #ffcc00;
+    -fx-border-color: #b58900;
+    -fx-text-fill: black;
+}
+
+/* Estilo para los botones de cerrar y minimizar */
+Button[onAction="#cerrar"], Button[onAction="#minimizar"] {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+   

@@ -1,0 +1,86 @@
+/* Estilo general del Pane */
+Pane {
+    -fx-background-color: linear-gradient(to bottom, #0073e6, #ffcc00);
+}
+
+/* Estilo para las etiquetas */
+Label {
+    -fx-font-size: 18px;
+    -fx-text-fill: #ffffff; /* Blanco para contrastar con el fondo */
+    -fx-font-weight: bold;
+}
+
+/* Estilo para el título */
+Label:nth-child(4) {
+    -fx-font-size: 20px; /* Tamaño original del título */
+    -fx-text-fill: #fff;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0, 0, 2);
+}
+
+/* Estilo para los campos de texto y área de texto */
+TextField, TextArea, ComboBox {
+    -fx-background-radius: 15px;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #005bb5;
+    -fx-border-radius: 15px;
+    -fx-border-width: 2px;
+    -fx-padding: 5px;
+    -fx-prompt-text-fill: #888888; /* Color de texto del placeholder */
+}
+
+/* Eliminar imagen dentro de los campos de texto */
+TextField, TextArea, ComboBox {
+    -fx-background-insets: 0;
+    -fx-background-image: none;
+}
+
+/* Estilo para los botones */
+Button {
+    -fx-background-color: #005bb5;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 15px;
+    -fx-pref-height: 32px; /* Mantener tamaño original */
+    -fx-border-color: #003d82;
+    -fx-border-radius: 15px;
+    -fx-border-width: 2px;
+}
+
+/* Efecto hover en los botones */
+Button:hover {
+    -fx-background-color: #ffcc00;
+    -fx-border-color: #b58900;
+    -fx-text-fill: black;
+}
+
+/* Estilo para los botones de cerrar y minimizar */
+Button[onAction="#cerrar"], Button[onAction="#minimizar"] {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-border-width: 0px;
+    -fx-pref-width: 60px; /* Ajustar tamaño a 60px */
+    -fx-pref-height: 25px; /* Tamaño del botón */
+}
+
+/* Estilo hover en los botones de cerrar y minimizar */
+Button[onAction="#cerrar"]:hover {
+    -fx-background-color: #d70707;
+}
+
+Button[onAction="#minimizar"]:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Estilo para los otros botones (ej. "Guardar", "Volver") */
+Button[onAction="#guardarRegistro"], Button[onAction="#irMenu"] {
+    -fx-pref-width: 120px; /* Ancho mayor para estos botones */
+}
+
+/* Estilo para el mensaje de error */
+Label#textoError {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ff0000;
+}

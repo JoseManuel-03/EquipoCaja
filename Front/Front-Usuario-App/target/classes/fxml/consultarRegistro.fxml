@@ -7,7 +7,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="435.0" prefWidth="827.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.ConsultarRegistroController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="435.0" prefWidth="827.0" stylesheets="@../css/consultarRegistro.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.ConsultarRegistroController">
    <children>
       <Button layoutX="747.0" layoutY="14.0" mnemonicParsing="false" onAction="#minimizar" prefHeight="25.0" prefWidth="33.0" text="—" />
       <Button cancelButton="true" layoutX="780.0" layoutY="14.0" mnemonicParsing="false" onAction="#cerrar" prefHeight="25.0" prefWidth="33.0" text="X" />
@@ -19,9 +19,9 @@
             <TableColumn fx:id="columnaDescripcion" prefWidth="225.0" text="Descripcion" />
         </columns>
       </TableView>
-      <Button layoutX="465.0" layoutY="39.0" mnemonicParsing="false" onAction="#consultarEntreFechas" text="Consultar" />
-      <DatePicker fx:id="datePickerDesde" layoutX="100.0" layoutY="39.0" promptText="Fecha desde" />
-      <DatePicker fx:id="datePickerHasta" layoutX="281.0" layoutY="39.0" promptText="Fecha hasta" />
+      <Button layoutX="482.0" layoutY="43.0" mnemonicParsing="false" onAction="#consultarEntreFechas" text="Consultar" />
+      <DatePicker fx:id="datePickerDesde" layoutX="100.0" layoutY="39.0" prefHeight="39.0" prefWidth="167.0" promptText="Fecha desde" />
+      <DatePicker fx:id="datePickerHasta" layoutX="280.0" layoutY="39.0" prefHeight="39.0" prefWidth="167.0" promptText="Fecha hasta" />
       <ComboBox fx:id="comoboBox" layoutX="614.0" layoutY="92.0" prefWidth="150.0" promptText="Tipo de fecha" />
       <Button layoutX="316.0" layoutY="384.0" mnemonicParsing="false" onAction="#altaRegistro" text="Alta Registro" />
    </children>

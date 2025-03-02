@@ -44,7 +44,7 @@ public class AltaRegistroContorller extends AppController {
 
 	        if (usuario != null) {
 	            // Obtén las fechas disponibles para el alumno
-	            List<LocalDate> fechasDisponibles = apiService.consultarDetalles(null, null, null);
+	            List<LocalDate> fechasDisponibles = apiService.ob
 
 	            // Configura el ComboBox con las fechas disponibles
 	            if (fechasDisponibles != null && !fechasDisponibles.isEmpty()) {
