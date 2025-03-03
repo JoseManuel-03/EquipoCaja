@@ -7,7 +7,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="612.0" stylesheets="@../css/detalleRegistro.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.DetalleRegistroController">
    <children>
-      <Label layoutX="101.0" layoutY="116.0" text="Fechas" />
+      <Label layoutX="101.0" layoutY="116.0" text="Fechas:" />
       <Label alignment="CENTER" layoutX="220.0" layoutY="25.0" prefHeight="71.0" prefWidth="161.0" text="Detalle Registro">
          <font>
             <Font size="18.0" />
@@ -16,8 +16,8 @@
       <Button layoutX="533.0" layoutY="13.0" mnemonicParsing="false" onAction="#minimizar" prefHeight="25.0" prefWidth="33.0" text="—" />
       <Button cancelButton="true" layoutX="566.0" layoutY="13.0" mnemonicParsing="false" onAction="#cerrar" prefHeight="25.0" prefWidth="33.0" text="X" />
       <Button fx:id="botonBorrar" layoutX="253.0" layoutY="323.0" mnemonicParsing="false" text="Borrar Registro" />
-      <Label layoutX="101.0" layoutY="247.0" text="Descripcion" />
-      <Label layoutX="103.0" layoutY="182.0" text="Horas" />
+      <Label layoutX="101.0" layoutY="247.0" text="Descripcion:" />
+      <Label layoutX="103.0" layoutY="182.0" text="Horas:" />
       <Label fx:id="labelFecha" layoutX="220.0" layoutY="102.0" prefHeight="48.0" prefWidth="218.0">
          <font>
             <Font size="15.0" />
@@ -28,7 +28,7 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="labelDescripcion" layoutX="220.0" layoutY="211.0" prefHeight="93.0" prefWidth="339.0">
+      <Label fx:id="labelDescripcion" layoutX="220.0" layoutY="211.0" prefHeight="93.0" prefWidth="339.0" wrapText="true">
          <font>
             <Font size="15.0" />
          </font>

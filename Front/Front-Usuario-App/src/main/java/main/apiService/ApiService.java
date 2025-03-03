@@ -39,7 +39,7 @@ public class ApiService {
 		try {
 			UsuarioDTO usuarioDTO = service.login(loginRequest);
 			if (usuarioDTO != null /* && usuarioDTO.getActivo == true */) {
-				return usuarioDTO; // Solo permite el login si el usuario está activo y es un alumno
+				return usuarioDTO; 
 			} else {
 				return null; // Usuario inactivo o no es un alumno
 			}

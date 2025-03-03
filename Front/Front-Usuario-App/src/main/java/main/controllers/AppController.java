@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import main.App;
 
@@ -60,8 +61,8 @@ public class AppController {
             	RegistroHorasController registroHorasController = (RegistroHorasController) controller;
                 registroHorasController.setStage(primaryStage);  // Pasamos el Stage
             }
-            else if (controller instanceof AltaRegistroContorller) {
-            	AltaRegistroContorller altaRegistroController = (AltaRegistroContorller) controller;
+            else if (controller instanceof AltaRegistroController) {
+            	AltaRegistroController altaRegistroController = (AltaRegistroController) controller;
                 altaRegistroController.setStage(primaryStage);  // Pasamos el Stage
             }
             else if (controller instanceof DetalleRegistroController) {
@@ -111,6 +112,14 @@ public class AppController {
 		alert.setHeaderText(null);
 		alert.setContentText(mensaje);
 		alert.showAndWait();
+	}
+	public void mostrarMensajeExito(String mensaje) {
+	    // Crear una alerta de tipo información
+	    Alert alert = new Alert(AlertType.INFORMATION);
+	    alert.setTitle("Éxito");
+	    alert.setHeaderText(null); 
+	    alert.setContentText(mensaje); 
+	    alert.showAndWait();
 	}
 	
 }

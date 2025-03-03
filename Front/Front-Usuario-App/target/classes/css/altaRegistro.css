@@ -26,7 +26,7 @@ TextField, TextArea, ComboBox {
     -fx-border-radius: 15px;
     -fx-border-width: 2px;
     -fx-padding: 5px;
-    -fx-prompt-text-fill: #888888; /* Color de texto del placeholder */
+    -fx-prompt-text-fill: black; /* Color de texto del placeholder */
 }
 
 /* Eliminar imagen dentro de los campos de texto */

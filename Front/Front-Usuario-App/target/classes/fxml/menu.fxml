@@ -10,11 +10,11 @@
    <children>
       <Label layoutX="260.0" layoutY="42.0" text="Menu">
          <font>
-            <Font size="31.0" />
+            <Font size="24.0" />
          </font>
       </Label>
-      <Button layoutX="41.0" layoutY="17.0" mnemonicParsing="false" onAction="#cerrarSesion" text="Cerrar sesión" />
-      <ComboBox fx:id="comboBox" layoutX="189.0" layoutY="123.0" prefWidth="150.0" />
+      <Button layoutX="32.0" layoutY="21.0" mnemonicParsing="false" onAction="#cerrarSesion" text="Cerrar sesión" />
+      <ComboBox fx:id="comboBox" layoutX="194.0" layoutY="133.0" prefWidth="150.0" promptText="Selecciona" />
       <Button cancelButton="true" layoutX="560.0" layoutY="5.0" mnemonicParsing="false" onAction="#cerrar" prefHeight="25.0" prefWidth="33.0" text="X" />
       <Button layoutX="527.0" layoutY="5.0" mnemonicParsing="false" onAction="#minimizar" prefHeight="25.0" prefWidth="33.0" text="—" />
    </children>

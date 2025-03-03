@@ -1,4 +1,4 @@
-/* Estilo general del Pane */
+/* Estilo general del fondo del Pane */
 Pane {
     -fx-background-color: linear-gradient(to bottom, #0073e6, #ffcc00);
 }
@@ -6,36 +6,88 @@ Pane {
 /* Estilo para las etiquetas */
 Label {
     -fx-font-size: 14px;
-    -fx-text-fill: #ffffff; /* Blanco para contrastar con el fondo */
+    -fx-text-fill: #ffffff; /* Texto blanco para contraste */
     -fx-font-weight: bold;
 }
 
 /* Estilo para el título */
-Label:nth-child(5) {
+Label#titulo {
     -fx-font-size: 20px;
     -fx-text-fill: #fff;
     -fx-font-weight: bold;
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 5, 0, 0, 2);
 }
 
-/* Estilo para los campos de texto, combo box y date pickers */
-TextField, DatePicker, ComboBox {
-    -fx-background-radius: 15px;
-    -fx-background-color: #ffffff;
-    -fx-border-color: #005bb5;
-    -fx-border-radius: 15px;
-    -fx-border-width: 2px;
-    -fx-padding: 5px;
-    -fx-prompt-text-fill: #888888; /* Color de texto del placeholder */
+/* ===== CAMPOS DE TEXTO ===== */
+TextField {
+    -fx-background-color: white; /* Fondo blanco */
+    -fx-border-color: #005bb5; /* Color de borde */
+    -fx-border-radius: 10px; /* Bordes redondeados */
+    -fx-padding: 5px; /* Padding interno */
 }
 
-/* Eliminar imagen dentro de los campos de texto */
-TextField, DatePicker, ComboBox {
-    -fx-background-insets: 0;
-    -fx-background-image: none;
+/* Placeholder de los campos */
+TextField .text-input {
+    -fx-prompt-text-fill: #888888; /* Color del texto del placeholder */
+    -fx-text-fill: #000000; /* Color del texto ingresado */
 }
 
-/* Estilo para los botones */
+/* ===== ESTILO PARA EL COMBOBOX ===== */
+ComboBox {
+    -fx-background-radius: 15px; /* Bordes redondeados */
+    -fx-background-color: #ffffff; /* Fondo blanco */
+    -fx-border-color: #005bb5; /* Color de borde */
+    -fx-border-radius: 15px; /* Bordes redondeados */
+    -fx-border-width: 2px; /* Ancho del borde */
+    -fx-padding: 5px; /* Padding interno */
+}
+
+/* Placeholder de ComboBox */
+ComboBox .text-input {
+    -fx-prompt-text-fill: black; /* Color del texto del placeholder */
+    -fx-text-fill: #000000; /* Color del texto ingresado */
+}
+
+/* Asegurar que el área interna del ComboBox no sea transparente */
+ComboBox .list-cell {
+    -fx-background-color: white; /* Fondo blanco */
+    -fx-text-fill: black; /* Color del texto */
+}
+
+/* Efecto hover en las opciones del ComboBox */
+ComboBox .list-cell:hover {
+    -fx-background-color: #ffcc00; /* Color de fondo al pasar el ratón */
+    -fx-text-fill: black; /* Color del texto al pasar el ratón */
+}
+
+/* ===== DATEPICKER ===== */
+DatePicker {
+    -fx-background-color: white; /* Fondo blanco */
+    -fx-border-color: #005bb5; /* Color de borde */
+    -fx-border-radius: 10px; /* Bordes redondeados */
+    -fx-padding: 5px; /* Padding interno */
+}
+
+/* Placeholder de DatePicker */
+DatePicker .text-input {
+    -fx-prompt-text-fill: black; /* Color del texto del placeholder */
+    -fx-text-fill: #000000; /* Color del texto ingresado */
+}
+
+/* Asegurar que el área interna del campo de texto no sea transparente */
+TextField .text-input,
+DatePicker .content,
+ComboBox .list-cell {
+    -fx-background-color: white; /* Fondo blanco */
+    -fx-opacity: 1; /* Evita transparencias */
+}
+
+/* Placeholder de los campos enfocados */
+TextField:focused, ComboBox:focused, DatePicker:focused {
+    -fx-background-color: white; /* Fondo blanco cuando está enfocado */
+}
+
+/* ===== BOTONES ===== */
 Button {
     -fx-background-color: #005bb5;
     -fx-text-fill: white;
@@ -47,40 +99,61 @@ Button {
     -fx-border-width: 2px;
 }
 
-/* Efecto hover en los botones */
+/* Efecto hover en botones */
 Button:hover {
     -fx-background-color: #ffcc00;
     -fx-border-color: #b58900;
     -fx-text-fill: black;
 }
 
-/* Estilo para los botones de cerrar y minimizar */
+/* ===== ESTILO PARA LOS BOTONES DE CERRAR Y MINIMIZAR ===== */
 Button[onAction="#cerrar"], Button[onAction="#minimizar"] {
-    -fx-background-color: transparent;
-    -fx-text-fill: white;
-    -fx-font-size: 14px;
-    -fx-border-width: 0px;
+    -fx-background-color: #005bb5; /* Color de fondo */
+    -fx-text-fill: white; /* Color del texto */
+    -fx-border-color: #003d82; /* Color de borde */
+    -fx-border-radius: 15px; /* Bordes redondeados */
+    -fx-border-width: 2px; /* Ancho del borde */
     -fx-pref-width: 60px; /* Ajustar tamaño a 60px */
     -fx-pref-height: 25px; /* Tamaño del botón */
 }
 
-/* Estilo hover en los botones de cerrar y minimizar */
-Button[onAction="#cerrar"]:hover {
-    -fx-background-color: #d70707;
+/* Hover en los botones de cerrar y minimizar */
+Button[onAction="#cerrar"]:hover, Button[onAction="#minimizar"]:hover {
+    -fx-background-color: #ffcc00; /* Cambiar fondo al pasar el ratón */
+    -fx-border-color: #b58900; /* Cambiar color de borde al pasar el ratón */
+    -fx-text-fill: black; /* Cambiar texto a negro al pasar el ratón */
 }
 
-Button[onAction="#minimizar"]:hover {
-    -fx-background-color: rgba(255, 255, 255, 0.3);
-}
-
-/* Estilo para otros botones (ej. "Volver", "Consultar", "Alta Registro") */
-Button[onAction="#consultarEntreFechas"], Button[onAction="#altaRegistro"], Button[onAction="#irMenu"] {
+/* ===== FILTROS Y MENÚS ===== */
+Button[onAction="#consultarEntreFechas"], 
+Button[onAction="#altaRegistro"], 
+Button[onAction="#irMenu"] {
     -fx-pref-width: 120px; /* Ancho mayor para estos botones */
 }
 
-/* Estilo para el mensaje de error */
+/* ===== MENSAJES DE ERROR ===== */
 Label#textoError {
     -fx-font-size: 14px;
     -fx-font-weight: bold;
-    -fx-text-fill: #ff0000;
+    -fx-text-fill: #ff0000; /* Color rojo para mensajes de error */
+}
+
+/* ===== ESTILO PARA LA TABLA ===== */
+.table-view {
+    -fx-font-size: 14px; /* Tamaño de fuente */
+}
+
+/* Cabeceras de columnas */
+.table-view .column-header {
+    -fx-text-fill: black; /* Color de texto de las cabeceras de las columnas */
+    -fx-font-weight: bold; /* Aumentar el peso de la fuente para las cabeceras */
+}
+
+/* Texto en celdas (puedes cambiar a otro color si lo deseas) */
+.table-view .table-cell {
+    -fx-text-fill: black; /* Cambiar esto al color que prefieras */
+}
+
+.table-view .table-cell:filled {
+    -fx-text-fill: black; /* Cambiar esto al color que prefieras */
 }

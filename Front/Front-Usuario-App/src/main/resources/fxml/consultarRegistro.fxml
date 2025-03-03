@@ -9,14 +9,14 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="444.0" prefWidth="897.0" stylesheets="@../css/consultarRegistro.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.ConsultarRegistroController">
    <children>
-      <Button layoutX="801.0" layoutY="14.0" mnemonicParsing="false" onAction="#minimizar" prefHeight="25.0" prefWidth="33.0" text="—" />
-      <Button cancelButton="true" layoutX="841.0" layoutY="14.0" mnemonicParsing="false" onAction="#cerrar" prefHeight="25.0" prefWidth="33.0" text="X" />
+      <Button layoutX="817.0" layoutY="14.0" mnemonicParsing="false" onAction="#minimizar" prefHeight="25.0" prefWidth="33.0" text="—" />
+      <Button cancelButton="true" layoutX="850.0" layoutY="14.0" mnemonicParsing="false" onAction="#cerrar" prefHeight="25.0" prefWidth="33.0" text="X" />
       <Button layoutX="23.0" layoutY="396.0" mnemonicParsing="false" onAction="#irMenu" text="Volver" />
-      <TableView fx:id="tabla" layoutX="100.0" layoutY="84.0" prefHeight="268.0" prefWidth="585.0">
+      <TableView fx:id="tabla" layoutX="100.0" layoutY="84.0" prefHeight="268.0" prefWidth="585.0" tableMenuButtonVisible="true">
         <columns>
           <TableColumn fx:id="columnaFechas" prefWidth="132.0" text="Fecha" />
           <TableColumn fx:id="columnaHorasRegistradas" prefWidth="147.99998474121094" text="Horas Registradas" />
-            <TableColumn fx:id="columnaDescripcion" prefWidth="304.79998779296875" text="Descripcion" />
+            <TableColumn fx:id="columnaDescripcion" prefWidth="300.0" text="Descripcion" />
         </columns>
       </TableView>
       <Button layoutX="610.0" layoutY="43.0" mnemonicParsing="false" onAction="#consultarEntreFechas" text="Consultar" />

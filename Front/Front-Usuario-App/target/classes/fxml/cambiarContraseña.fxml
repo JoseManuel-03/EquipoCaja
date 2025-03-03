@@ -10,8 +10,8 @@
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../css/cambiarContraseña.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.CambiarContraseñaController">
    <children>
       <Label layoutX="119.0" layoutY="126.0" text="Usuario:" />
-      <Label layoutX="119.0" layoutY="192.0" text="Contraseña Antigua:" />
-      <Label layoutX="122.0" layoutY="253.0" text="Contraseña Nueva:" />
+      <Label layoutX="119.0" layoutY="194.0" text="Contraseña Antigua:" />
+      <Label layoutX="119.0" layoutY="264.0" text="Contraseña Nueva:" />
       <TextField fx:id="textFieldUsuario" layoutX="269.0" layoutY="122.0" />
       <Button layoutX="280.0" layoutY="346.0" mnemonicParsing="false" onAction="#validar" text="Validar" />
       <Label alignment="CENTER" layoutX="201.0" layoutY="24.0" prefHeight="63.0" prefWidth="198.0" text="Cambiar Contraseña">

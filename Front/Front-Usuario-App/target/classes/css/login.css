@@ -57,6 +57,7 @@ Button[onAction="#cerrar"], Button[onAction="#minimizar"] {
     -fx-border-width: 0px;
     -fx-pref-width: 60px; /* Ahora tienen un ancho de 60px */
     -fx-pref-height: 25px;
+	-fx-border-radius: 15px; /* Bordes redondeados */
 }
 
 /* Tamaño específico para el botón de validar */

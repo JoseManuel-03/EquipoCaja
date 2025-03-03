@@ -8,10 +8,10 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="660.0" stylesheets="@../css/altaRegistro.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.AltaRegistroContorller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="660.0" stylesheets="@../css/altaRegistro.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.AltaRegistroController">
    <children>
-      <Button layoutX="546.0" layoutY="15.0" mnemonicParsing="false" onAction="#minimizar" prefHeight="25.0" prefWidth="50.0" text="—" />
-      <Button cancelButton="true" layoutX="596.0" layoutY="15.0" mnemonicParsing="false" onAction="#cerrar" prefHeight="25.0" prefWidth="50.0" text="X" />
+      <Button layoutX="574.0" layoutY="15.0" mnemonicParsing="false" onAction="#minimizar" prefHeight="25.0" prefWidth="36.0" text="—" />
+      <Button cancelButton="true" layoutX="610.0" layoutY="15.0" mnemonicParsing="false" onAction="#cerrar" prefHeight="25.0" prefWidth="36.0" text="X" />
       <Button layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#irMenu" text="Volver" />
       <Label layoutX="231.0" layoutY="40.0" text="Alta de Registros">
          <font>
