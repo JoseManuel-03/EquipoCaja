@@ -71,15 +71,25 @@ CREATE TABLE IF NOT EXISTS `fechas_practicas` (
   `anio_curso` year(4) NOT NULL,
   `evaluacion` enum('SEPTIEMBRE','MARZO') NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_spanish_ci;
 
--- Volcando datos para la tabla usuariocaja.fechas_practicas: ~5 rows (aproximadamente)
+-- Volcando datos para la tabla usuariocaja.fechas_practicas: ~15 rows (aproximadamente)
 INSERT INTO `fechas_practicas` (`id`, `fecha`, `anio_curso`, `evaluacion`) VALUES
 	(1, '2024-09-15', '2024', 'SEPTIEMBRE'),
 	(2, '2024-03-10', '2024', 'MARZO'),
 	(3, '2024-09-20', '2024', 'SEPTIEMBRE'),
 	(4, '2024-08-03', '2024', 'SEPTIEMBRE'),
-	(5, '2024-10-10', '2024', 'MARZO');
+	(5, '2024-10-10', '2024', 'MARZO'),
+	(6, '2024-10-11', '2024', 'MARZO'),
+	(7, '2024-10-12', '2024', 'MARZO'),
+	(8, '2024-10-09', '2024', 'SEPTIEMBRE'),
+	(9, '2024-10-14', '2024', 'MARZO'),
+	(10, '2024-10-17', '2024', 'SEPTIEMBRE'),
+	(11, '2024-09-04', '2024', 'SEPTIEMBRE'),
+	(12, '2024-10-01', '2024', 'MARZO'),
+	(13, '2024-10-04', '2024', 'SEPTIEMBRE'),
+	(14, '2024-11-11', '2024', 'MARZO'),
+	(15, '2024-10-12', '2024', 'SEPTIEMBRE');
 
 -- Volcando estructura para tabla usuariocaja.registros_practicas
 CREATE TABLE IF NOT EXISTS `registros_practicas` (
@@ -93,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `registros_practicas` (
   KEY `fk_fecha` (`fecha_id`),
   CONSTRAINT `fk_alumno` FOREIGN KEY (`alumno_id`) REFERENCES `alumnos` (`id`) ON DELETE CASCADE,
   CONSTRAINT `fk_fecha` FOREIGN KEY (`fecha_id`) REFERENCES `fechas_practicas` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_spanish_ci;
 
 -- Volcando datos para la tabla usuariocaja.registros_practicas: ~15 rows (aproximadamente)
 INSERT INTO `registros_practicas` (`id`, `alumno_id`, `fecha_id`, `cantidad_horas`, `descripcion`) VALUES
@@ -102,16 +112,16 @@ INSERT INTO `registros_practicas` (`id`, `alumno_id`, `fecha_id`, `cantidad_hora
 	(3, 3, 3, 7, 'Configuración de servidores y pruebas de ciberseguridad.'),
 	(4, 2, 4, 8, 'Uxabilidad y QUA'),
 	(5, 3, 5, 7, 'Desarrollo de Back en Java'),
-	(6, 1, 3, 6, 'Uxabilidad y QUA'),
-	(7, 4, 2, 6, 'Desarrollo Back'),
-	(8, 1, 1, 6, 'Diseño de una interfaz web responsiva con React y Tailwind CSS.'),
-	(9, 4, 3, 6, 'Configuración de servidores y pruebas de ciberseguridad.'),
-	(10, 2, 4, 7, 'Configuración de servidores y pruebas de ciberseguridad.'),
-	(11, 3, 1, 2, 'Desarrollo Back'),
-	(12, 4, 5, 5, 'Diseño de una interfaz web responsiva con React y Tailwind CSS.'),
-	(13, 5, 4, 3, 'Diseño de una interfaz web responsiva con React y Tailwind CSS.'),
-	(14, 5, 2, 6, 'Desarrollo Back'),
-	(15, 5, 5, 7, 'Desarrollo Back');
+	(6, 1, 6, 6, 'Uxabilidad y QUA'),
+	(7, 4, 7, 6, 'Desarrollo Back'),
+	(8, 1, 8, 6, 'Diseño de una interfaz web responsiva con React y Tailwind CSS.'),
+	(9, 4, 9, 6, 'Configuración de servidores y pruebas de ciberseguridad.'),
+	(10, 2, 10, 7, 'Configuración de servidores y pruebas de ciberseguridad.'),
+	(11, 3, 11, 2, 'Desarrollo Back'),
+	(12, 4, 12, 5, 'Diseño de una interfaz web responsiva con React y Tailwind CSS.'),
+	(13, 5, 13, 3, 'Diseño de una interfaz web responsiva con React y Tailwind CSS.'),
+	(14, 5, 14, 6, 'Desarrollo Back'),
+	(15, 5, 15, 7, 'Desarrollo Back');
 
 -- Volcando estructura para tabla usuariocaja.tutores_docentes
 CREATE TABLE IF NOT EXISTS `tutores_docentes` (
