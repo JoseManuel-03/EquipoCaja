@@ -1,0 +1,238 @@
+{
+	"info": {
+		"_postman_id": "6f8edadb-d589-4537-a5c3-c21f4d3a175a",
+		"name": "EquipoCaja",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41195915"
+	},
+	"item": [
+		{
+			"name": "Cambia el pasword de User",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 1,\r\n  \"oldPassword\": \"ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb\",\r\n  \"newPassword\": \"ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Registro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"alumno\": {\r\n    \"id\": 1,\r\n    \"nombreCompleto\": \"string\",\r\n    \"ciclo\": \"string\",\r\n    \"evaluacion\": \"string\",\r\n    \"anioCurso\": 1073741824,\r\n    \"tutorDocente\": {\r\n      \"id\": 1,\r\n      \"nombreCompleto\": \"string\",\r\n      \"activo\": true\r\n    },\r\n    \"empresa\": {\r\n      \"id\": 1,\r\n      \"nombreEmpresa\": \"string\",\r\n      \"tutorLaboralNombre\": \"string\",\r\n      \"tutorLaboralEmail\": \"string\",\r\n      \"tutorLaboralTelefono\": \"string\",\r\n      \"activo\": true\r\n    }\r\n  },\r\n  \"fecha\": {\r\n    \"id\": 1,\r\n    \"fecha\": \"2025-03-03\",\r\n    \"anioCurso\": 1073741824,\r\n    \"evaluacion\": \"string\"\r\n  },\r\n  \"cantidadHoras\": 0.1,\r\n  \"descripcion\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/registro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"registro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login de usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"juanp\",\r\n  \"password\": \"ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar detalle user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"actorId\": 1073741824,\r\n  \"firstName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"lastUpdate\": \"2025-01-23\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/1?fecha1=2000/02/10&fecha2=2023/02/20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"1"
+					],
+					"query": [
+						{
+							"key": "fecha1",
+							"value": "2000/02/10"
+						},
+						{
+							"key": "fecha2",
+							"value": "2023/02/20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Fechas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users/1/registros?anioCurso=2024&evaluacion=1\n",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"1",
+						"registros"
+					],
+					"query": [
+						{
+							"key": "anioCurso",
+							"value": "2024"
+						},
+						{
+							"key": "evaluacion",
+							"value": "1\n"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar Registro",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/users/registro/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"registro",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "blaspass",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "X-API-KEY",
+				"type": "string"
+			},
+			{
+				"key": "in",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
