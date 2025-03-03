@@ -13,7 +13,7 @@
       <Label layoutX="119.0" layoutY="192.0" text="Contraseña Antigua:" />
       <Label layoutX="122.0" layoutY="253.0" text="Contraseña Nueva:" />
       <TextField fx:id="textFieldUsuario" layoutX="269.0" layoutY="122.0" />
-      <Button layoutX="274.0" layoutY="333.0" mnemonicParsing="false" onAction="#validar" text="Validar" />
+      <Button layoutX="280.0" layoutY="346.0" mnemonicParsing="false" onAction="#validar" text="Validar" />
       <Label alignment="CENTER" layoutX="201.0" layoutY="24.0" prefHeight="63.0" prefWidth="198.0" text="Cambiar Contraseña">
          <font>
             <Font size="16.0" />
@@ -22,7 +22,7 @@
       <Button layoutX="35.0" layoutY="346.0" mnemonicParsing="false" onAction="#irMenu" text="Volver" />
       <Button layoutX="532.0" layoutY="2.0" mnemonicParsing="false" onAction="#minimizar" prefHeight="25.0" prefWidth="33.0" text="—" />
       <Button cancelButton="true" layoutX="565.0" layoutY="2.0" mnemonicParsing="false" onAction="#cerrar" prefHeight="25.0" prefWidth="33.0" text="X" />
-      <Label fx:id="textoError" alignment="CENTER" layoutX="142.0" layoutY="292.0" prefHeight="31.0" prefWidth="309.0" textFill="RED" />
+      <Label fx:id="textoError" alignment="CENTER" layoutX="27.0" layoutY="289.0" prefHeight="47.0" prefWidth="551.0" textFill="RED" />
       <PasswordField fx:id="textFieldAntigua" layoutX="269.0" layoutY="188.0" />
       <PasswordField fx:id="textFieldNueva" layoutX="269.0" layoutY="258.0" />
    </children>

@@ -21,8 +21,8 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-     <groupId>api-client</groupId>
-    <artifactId>api-client</artifactId>
+<groupId>org.openapitools</groupId>
+    <artifactId>openapi-java-client</artifactId>
     <version>v0</version>
     </dependency>
   <!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->

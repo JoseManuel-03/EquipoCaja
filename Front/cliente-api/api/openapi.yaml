@@ -126,6 +126,66 @@ paths:
       - usuario-service-api
       x-accepts:
       - '*/*'
+  /api/users/{idUser}/registros:
+    get:
+      description: Devuelve todas la fechas disponibles para el usuario
+      operationId: consultarFechas
+      parameters:
+      - explode: false
+        in: path
+        name: idUser
+        required: true
+        schema:
+          format: int64
+          type: integer
+        style: simple
+      - explode: true
+        in: query
+        name: anioCurso
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: evaluacion
+        required: true
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: fechaInicio
+        required: false
+        schema:
+          format: date
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: fechaFin
+        required: false
+        schema:
+          format: date
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                items:
+                  $ref: '#/components/schemas/FechaPractica'
+                type: array
+          description: OK
+      security:
+      - Authorization: []
+      summary: Consultar Fechas
+      tags:
+      - usuario-service-api
+      x-accepts:
+      - '*/*'
   /api/users/registro/{id}:
     delete:
       description: Elimina un registro de práctica por ID.
@@ -235,7 +295,7 @@ components:
         id: 2
       properties:
         id:
-          format: int32
+          format: int64
           type: integer
         fecha:
           format: date
@@ -253,7 +313,7 @@ components:
           anioCurso: 7
           evaluacion: evaluacion
           id: 2
-        cantidadHoras: 9
+        cantidadHoras: 9.301444243932576
         alumno:
           ciclo: ciclo
           anioCurso: 1
@@ -281,8 +341,8 @@ components:
         fecha:
           $ref: '#/components/schemas/FechaPractica'
         cantidadHoras:
-          format: int32
-          type: integer
+          format: double
+          type: number
         descripcion:
           type: string
     TutoresDocente:
@@ -309,37 +369,46 @@ components:
           type: string
     UsuarioDTO:
       example:
-        empresaAsignada: empresaAsignada
-        cantidadHoras: 1
-        ciclo: ciclo
-        evaluacion: evaluacion
-        docente: docente
+        cantidadHoras: 6.027456183070403
+        usuarioAsociado:
+          ciclo: ciclo
+          anioCurso: 1
+          evaluacion: evaluacion
+          id: 6
+          nombreCompleto: nombreCompleto
+          empresa:
+            tutorLaboralNombre: tutorLaboralNombre
+            tutorLaboralEmail: tutorLaboralEmail
+            tutorLaboralTelefono: tutorLaboralTelefono
+            id: 5
+            nombreEmpresa: nombreEmpresa
+            activo: true
+          tutorDocente:
+            id: 5
+            nombreCompleto: nombreCompleto
+            activo: true
         id: 0
-        nombreCompleto: nombreCompleto
-        tutorDocente: tutorDocente
-        año: 6
+        nombreUsuario: nombreUsuario
+        contraseña: contraseña
+        perfil: perfil
+        activo: true
       properties:
         id:
           format: int64
           type: integer
-        nombreCompleto:
+        nombreUsuario:
           type: string
-        tutorDocente:
+        contraseña:
           type: string
-        ciclo:
+        perfil:
           type: string
-        año:
-          format: int32
-          type: integer
-        evaluacion:
-          type: string
-        docente:
-          type: string
-        empresaAsignada:
-          type: string
+        usuarioAsociado:
+          $ref: '#/components/schemas/Alumno'
+        activo:
+          type: boolean
         cantidadHoras:
-          format: int32
-          type: integer
+          format: double
+          type: number
   securitySchemes:
     Authorization:
       in: header

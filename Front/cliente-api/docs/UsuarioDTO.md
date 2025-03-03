@@ -8,14 +8,12 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**id** | **Long** |  |  [optional] |
-|**nombreCompleto** | **String** |  |  [optional] |
-|**tutorDocente** | **String** |  |  [optional] |
-|**ciclo** | **String** |  |  [optional] |
-|**año** | **Integer** |  |  [optional] |
-|**evaluacion** | **String** |  |  [optional] |
-|**docente** | **String** |  |  [optional] |
-|**empresaAsignada** | **String** |  |  [optional] |
-|**cantidadHoras** | **Integer** |  |  [optional] |
+|**nombreUsuario** | **String** |  |  [optional] |
+|**contraseña** | **String** |  |  [optional] |
+|**perfil** | **String** |  |  [optional] |
+|**usuarioAsociado** | [**Alumno**](Alumno.md) |  |  [optional] |
+|**activo** | **Boolean** |  |  [optional] |
+|**cantidadHoras** | **Double** |  |  [optional] |
 
 
 

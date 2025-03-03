@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * RegistroPractica
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-15T17:50:53.660208200+01:00[Europe/Madrid]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-03T02:20:28.516136200+01:00[Europe/Madrid]", comments = "Generator version: 7.11.0")
 public class RegistroPractica {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -70,7 +70,7 @@ public class RegistroPractica {
   public static final String SERIALIZED_NAME_CANTIDAD_HORAS = "cantidadHoras";
   @SerializedName(SERIALIZED_NAME_CANTIDAD_HORAS)
   @javax.annotation.Nullable
-  private Integer cantidadHoras;
+  private Double cantidadHoras;
 
   public static final String SERIALIZED_NAME_DESCRIPCION = "descripcion";
   @SerializedName(SERIALIZED_NAME_DESCRIPCION)
@@ -137,7 +137,7 @@ public class RegistroPractica {
   }
 
 
-  public RegistroPractica cantidadHoras(@javax.annotation.Nullable Integer cantidadHoras) {
+  public RegistroPractica cantidadHoras(@javax.annotation.Nullable Double cantidadHoras) {
     this.cantidadHoras = cantidadHoras;
     return this;
   }
@@ -147,11 +147,11 @@ public class RegistroPractica {
    * @return cantidadHoras
    */
   @javax.annotation.Nullable
-  public Integer getCantidadHoras() {
+  public Double getCantidadHoras() {
     return cantidadHoras;
   }
 
-  public void setCantidadHoras(@javax.annotation.Nullable Integer cantidadHoras) {
+  public void setCantidadHoras(@javax.annotation.Nullable Double cantidadHoras) {
     this.cantidadHoras = cantidadHoras;
   }
 

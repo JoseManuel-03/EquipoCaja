@@ -49,12 +49,12 @@ import org.openapitools.client.JSON;
 /**
  * FechaPractica
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-15T17:50:53.660208200+01:00[Europe/Madrid]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-03T02:20:28.516136200+01:00[Europe/Madrid]", comments = "Generator version: 7.11.0")
 public class FechaPractica {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   @javax.annotation.Nullable
-  private Integer id;
+  private Long id;
 
   public static final String SERIALIZED_NAME_FECHA = "fecha";
   @SerializedName(SERIALIZED_NAME_FECHA)
@@ -74,7 +74,7 @@ public class FechaPractica {
   public FechaPractica() {
   }
 
-  public FechaPractica id(@javax.annotation.Nullable Integer id) {
+  public FechaPractica id(@javax.annotation.Nullable Long id) {
     this.id = id;
     return this;
   }
@@ -84,11 +84,11 @@ public class FechaPractica {
    * @return id
    */
   @javax.annotation.Nullable
-  public Integer getId() {
+  public Long getId() {
     return id;
   }
 
-  public void setId(@javax.annotation.Nullable Integer id) {
+  public void setId(@javax.annotation.Nullable Long id) {
     this.id = id;
   }
 

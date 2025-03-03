@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,7 +24,7 @@ public class RegistroPractica {
 	@JoinColumn(name = "alumno_id", nullable = false)
 	private Alumno alumno;
 
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "fecha_id", nullable = false)
 	private FechaPractica fecha;
 

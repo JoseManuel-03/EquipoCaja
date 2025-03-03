@@ -2,27 +2,27 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../css/registroHoras.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.RegistroHorasController">
    <children>
-      <TextField fx:id="textFieldHorasRealizadas" layoutX="226.0" layoutY="142.0" />
       <Label layoutX="84.0" layoutY="146.0" text="Horas realizadas:" />
-      <Label fx:id="labelPorcentajeSobreTotal" layoutX="471.0" layoutY="148.0" text="Label" />
-      <Label layoutX="84.0" layoutY="208.0" text="Horas total a realizar:" />
-      <Label fx:id="labelHorasTotal" alignment="CENTER" layoutX="256.0" layoutY="208.0" prefHeight="17.0" prefWidth="121.0" text="Label" />
+      <Label fx:id="labelPorcentajeSobreTotal" alignment="CENTER" layoutX="359.0" layoutY="146.0" prefHeight="20.0" prefWidth="70.0" text="Label" />
+      <Label layoutX="84.0" layoutY="198.0" text="Horas total a realizar:" />
+      <Label fx:id="labelHorasTotal" alignment="CENTER" layoutX="256.0" layoutY="198.0" prefHeight="17.0" prefWidth="121.0" text="Label" />
       <Label layoutX="84.0" layoutY="256.0" text="Horas pendiente a realizar:" />
       <Label fx:id="labelHorasPendientesRealizar" layoutX="299.0" layoutY="256.0" text="Label" />
       <Button cancelButton="true" layoutX="553.0" layoutY="14.0" mnemonicParsing="false" onAction="#cerrar" prefHeight="25.0" prefWidth="33.0" text="X" />
       <Button layoutX="520.0" layoutY="14.0" mnemonicParsing="false" onAction="#minimizar" prefHeight="25.0" prefWidth="33.0" text="—" />
       <Button layoutX="22.0" layoutY="361.0" mnemonicParsing="false" onAction="#irMenu" text="Volver" />
-      <Button layoutX="266.0" layoutY="349.0" mnemonicParsing="false" onAction="#actualizar" text="Actualizar" />
       <Label layoutX="229.0" layoutY="39.0" text="Registro de Horas">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
+      <Label fx:id="labelHorasRealizadas" alignment="CENTER" layoutX="281.0" layoutY="146.0" prefHeight="20.0" prefWidth="70.0" text="label" />
+      <Line endX="5.0" endY="28.599990844726562" layoutX="351.0" layoutY="145.0" startX="5.0" startY="-4.1999969482421875" stroke="WHITE" />
    </children>
 </Pane>

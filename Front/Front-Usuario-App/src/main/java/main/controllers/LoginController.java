@@ -10,7 +10,6 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import main.apiService.*;
-import main.gui.AppController;
 
 
 public class LoginController extends AppController {
@@ -62,8 +61,9 @@ public class LoginController extends AppController {
 
         UsuarioDTO usuarioDTO = apiService.login(username, password);
         if (usuarioDTO != null) {
-            textoError.setText("Login exitoso! Bienvenido, " + usuarioDTO.getNombreCompleto());
+            textoError.setText("Login exitoso! Bienvenido, " + usuarioDTO.getNombreUsuario());
             addParam("usuario", usuarioDTO);
+            addParam("nombre",textFieldUsuario.getText());
             changeScene(FXML_MENU);
         } else {
             textoError.setText("Error en el login. Verifica tus credenciales.");

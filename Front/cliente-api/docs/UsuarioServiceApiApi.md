@@ -7,6 +7,7 @@ All URIs are relative to *http://localhost:8080*
 | [**borrarRegistro**](UsuarioServiceApiApi.md#borrarRegistro) | **DELETE** /api/users/registro/{id} | Borrar Registro |
 | [**cambiarContrasea**](UsuarioServiceApiApi.md#cambiarContrasea) | **PUT** /api/users | Cambia el pasword de User |
 | [**consultarDetalles**](UsuarioServiceApiApi.md#consultarDetalles) | **GET** /api/users/{idUser} | Consultar detalle user |
+| [**consultarFechas**](UsuarioServiceApiApi.md#consultarFechas) | **GET** /api/users/{idUser}/registros | Consultar Fechas |
 | [**crearRegistro**](UsuarioServiceApiApi.md#crearRegistro) | **POST** /api/users/registro | Crear Registro |
 | [**login**](UsuarioServiceApiApi.md#login) | **POST** /api/users/login | Login de usuario |
 
@@ -207,6 +208,83 @@ public class Example {
 ### Return type
 
 [**List&lt;RegistroPractica&gt;**](RegistroPractica.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+<a id="consultarFechas"></a>
+# **consultarFechas**
+> List&lt;FechaPractica&gt; consultarFechas(idUser, anioCurso, evaluacion, fechaInicio, fechaFin)
+
+Consultar Fechas
+
+Devuelve todas la fechas disponibles para el usuario
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.UsuarioServiceApiApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost:8080");
+    
+    // Configure API key authorization: Authorization
+    ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+    Authorization.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //Authorization.setApiKeyPrefix("Token");
+
+    UsuarioServiceApiApi apiInstance = new UsuarioServiceApiApi(defaultClient);
+    Long idUser = 56L; // Long | 
+    Integer anioCurso = 56; // Integer | 
+    String evaluacion = "evaluacion_example"; // String | 
+    LocalDate fechaInicio = LocalDate.now(); // LocalDate | 
+    LocalDate fechaFin = LocalDate.now(); // LocalDate | 
+    try {
+      List<FechaPractica> result = apiInstance.consultarFechas(idUser, anioCurso, evaluacion, fechaInicio, fechaFin);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UsuarioServiceApiApi#consultarFechas");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **idUser** | **Long**|  | |
+| **anioCurso** | **Integer**|  | |
+| **evaluacion** | **String**|  | |
+| **fechaInicio** | **LocalDate**|  | [optional] |
+| **fechaFin** | **LocalDate**|  | [optional] |
+
+### Return type
+
+[**List&lt;FechaPractica&gt;**](FechaPractica.md)
 
 ### Authorization
 

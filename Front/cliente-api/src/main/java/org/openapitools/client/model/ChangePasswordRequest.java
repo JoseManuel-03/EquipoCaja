@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * ChangePasswordRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-15T17:50:53.660208200+01:00[Europe/Madrid]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-03T02:20:28.516136200+01:00[Europe/Madrid]", comments = "Generator version: 7.11.0")
 public class ChangePasswordRequest {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)

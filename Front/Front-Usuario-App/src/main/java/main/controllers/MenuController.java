@@ -4,7 +4,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
-import main.gui.AppController;
 
 public class MenuController extends AppController {
 

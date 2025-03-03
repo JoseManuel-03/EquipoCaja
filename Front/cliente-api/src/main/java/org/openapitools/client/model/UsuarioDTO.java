@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.Alumno;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,52 +49,42 @@ import org.openapitools.client.JSON;
 /**
  * UsuarioDTO
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-02-15T17:50:53.660208200+01:00[Europe/Madrid]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-03-03T02:20:28.516136200+01:00[Europe/Madrid]", comments = "Generator version: 7.11.0")
 public class UsuarioDTO {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   @javax.annotation.Nullable
   private Long id;
 
-  public static final String SERIALIZED_NAME_NOMBRE_COMPLETO = "nombreCompleto";
-  @SerializedName(SERIALIZED_NAME_NOMBRE_COMPLETO)
+  public static final String SERIALIZED_NAME_NOMBRE_USUARIO = "nombreUsuario";
+  @SerializedName(SERIALIZED_NAME_NOMBRE_USUARIO)
   @javax.annotation.Nullable
-  private String nombreCompleto;
+  private String nombreUsuario;
 
-  public static final String SERIALIZED_NAME_TUTOR_DOCENTE = "tutorDocente";
-  @SerializedName(SERIALIZED_NAME_TUTOR_DOCENTE)
+  public static final String SERIALIZED_NAME_CONTRASEñA = "contraseña";
+  @SerializedName(SERIALIZED_NAME_CONTRASEñA)
   @javax.annotation.Nullable
-  private String tutorDocente;
+  private String contraseña;
 
-  public static final String SERIALIZED_NAME_CICLO = "ciclo";
-  @SerializedName(SERIALIZED_NAME_CICLO)
+  public static final String SERIALIZED_NAME_PERFIL = "perfil";
+  @SerializedName(SERIALIZED_NAME_PERFIL)
   @javax.annotation.Nullable
-  private String ciclo;
+  private String perfil;
 
-  public static final String SERIALIZED_NAME_AñO = "año";
-  @SerializedName(SERIALIZED_NAME_AñO)
+  public static final String SERIALIZED_NAME_USUARIO_ASOCIADO = "usuarioAsociado";
+  @SerializedName(SERIALIZED_NAME_USUARIO_ASOCIADO)
   @javax.annotation.Nullable
-  private Integer año;
+  private Alumno usuarioAsociado;
 
-  public static final String SERIALIZED_NAME_EVALUACION = "evaluacion";
-  @SerializedName(SERIALIZED_NAME_EVALUACION)
+  public static final String SERIALIZED_NAME_ACTIVO = "activo";
+  @SerializedName(SERIALIZED_NAME_ACTIVO)
   @javax.annotation.Nullable
-  private String evaluacion;
-
-  public static final String SERIALIZED_NAME_DOCENTE = "docente";
-  @SerializedName(SERIALIZED_NAME_DOCENTE)
-  @javax.annotation.Nullable
-  private String docente;
-
-  public static final String SERIALIZED_NAME_EMPRESA_ASIGNADA = "empresaAsignada";
-  @SerializedName(SERIALIZED_NAME_EMPRESA_ASIGNADA)
-  @javax.annotation.Nullable
-  private String empresaAsignada;
+  private Boolean activo;
 
   public static final String SERIALIZED_NAME_CANTIDAD_HORAS = "cantidadHoras";
   @SerializedName(SERIALIZED_NAME_CANTIDAD_HORAS)
   @javax.annotation.Nullable
-  private Integer cantidadHoras;
+  private Double cantidadHoras;
 
   public UsuarioDTO() {
   }
@@ -117,140 +108,102 @@ public class UsuarioDTO {
   }
 
 
-  public UsuarioDTO nombreCompleto(@javax.annotation.Nullable String nombreCompleto) {
-    this.nombreCompleto = nombreCompleto;
+  public UsuarioDTO nombreUsuario(@javax.annotation.Nullable String nombreUsuario) {
+    this.nombreUsuario = nombreUsuario;
     return this;
   }
 
   /**
-   * Get nombreCompleto
-   * @return nombreCompleto
+   * Get nombreUsuario
+   * @return nombreUsuario
    */
   @javax.annotation.Nullable
-  public String getNombreCompleto() {
-    return nombreCompleto;
+  public String getNombreUsuario() {
+    return nombreUsuario;
   }
 
-  public void setNombreCompleto(@javax.annotation.Nullable String nombreCompleto) {
-    this.nombreCompleto = nombreCompleto;
+  public void setNombreUsuario(@javax.annotation.Nullable String nombreUsuario) {
+    this.nombreUsuario = nombreUsuario;
   }
 
 
-  public UsuarioDTO tutorDocente(@javax.annotation.Nullable String tutorDocente) {
-    this.tutorDocente = tutorDocente;
+  public UsuarioDTO contraseña(@javax.annotation.Nullable String contraseña) {
+    this.contraseña = contraseña;
     return this;
   }
 
   /**
-   * Get tutorDocente
-   * @return tutorDocente
+   * Get contraseña
+   * @return contraseña
    */
   @javax.annotation.Nullable
-  public String getTutorDocente() {
-    return tutorDocente;
+  public String getContraseña() {
+    return contraseña;
   }
 
-  public void setTutorDocente(@javax.annotation.Nullable String tutorDocente) {
-    this.tutorDocente = tutorDocente;
+  public void setContraseña(@javax.annotation.Nullable String contraseña) {
+    this.contraseña = contraseña;
   }
 
 
-  public UsuarioDTO ciclo(@javax.annotation.Nullable String ciclo) {
-    this.ciclo = ciclo;
+  public UsuarioDTO perfil(@javax.annotation.Nullable String perfil) {
+    this.perfil = perfil;
     return this;
   }
 
   /**
-   * Get ciclo
-   * @return ciclo
+   * Get perfil
+   * @return perfil
    */
   @javax.annotation.Nullable
-  public String getCiclo() {
-    return ciclo;
+  public String getPerfil() {
+    return perfil;
   }
 
-  public void setCiclo(@javax.annotation.Nullable String ciclo) {
-    this.ciclo = ciclo;
+  public void setPerfil(@javax.annotation.Nullable String perfil) {
+    this.perfil = perfil;
   }
 
 
-  public UsuarioDTO año(@javax.annotation.Nullable Integer año) {
-    this.año = año;
+  public UsuarioDTO usuarioAsociado(@javax.annotation.Nullable Alumno usuarioAsociado) {
+    this.usuarioAsociado = usuarioAsociado;
     return this;
   }
 
   /**
-   * Get año
-   * @return año
+   * Get usuarioAsociado
+   * @return usuarioAsociado
    */
   @javax.annotation.Nullable
-  public Integer getAño() {
-    return año;
+  public Alumno getUsuarioAsociado() {
+    return usuarioAsociado;
   }
 
-  public void setAño(@javax.annotation.Nullable Integer año) {
-    this.año = año;
+  public void setUsuarioAsociado(@javax.annotation.Nullable Alumno usuarioAsociado) {
+    this.usuarioAsociado = usuarioAsociado;
   }
 
 
-  public UsuarioDTO evaluacion(@javax.annotation.Nullable String evaluacion) {
-    this.evaluacion = evaluacion;
+  public UsuarioDTO activo(@javax.annotation.Nullable Boolean activo) {
+    this.activo = activo;
     return this;
   }
 
   /**
-   * Get evaluacion
-   * @return evaluacion
+   * Get activo
+   * @return activo
    */
   @javax.annotation.Nullable
-  public String getEvaluacion() {
-    return evaluacion;
+  public Boolean getActivo() {
+    return activo;
   }
 
-  public void setEvaluacion(@javax.annotation.Nullable String evaluacion) {
-    this.evaluacion = evaluacion;
-  }
-
-
-  public UsuarioDTO docente(@javax.annotation.Nullable String docente) {
-    this.docente = docente;
-    return this;
-  }
-
-  /**
-   * Get docente
-   * @return docente
-   */
-  @javax.annotation.Nullable
-  public String getDocente() {
-    return docente;
-  }
-
-  public void setDocente(@javax.annotation.Nullable String docente) {
-    this.docente = docente;
+  public void setActivo(@javax.annotation.Nullable Boolean activo) {
+    this.activo = activo;
   }
 
 
-  public UsuarioDTO empresaAsignada(@javax.annotation.Nullable String empresaAsignada) {
-    this.empresaAsignada = empresaAsignada;
-    return this;
-  }
-
-  /**
-   * Get empresaAsignada
-   * @return empresaAsignada
-   */
-  @javax.annotation.Nullable
-  public String getEmpresaAsignada() {
-    return empresaAsignada;
-  }
-
-  public void setEmpresaAsignada(@javax.annotation.Nullable String empresaAsignada) {
-    this.empresaAsignada = empresaAsignada;
-  }
-
-
-  public UsuarioDTO cantidadHoras(@javax.annotation.Nullable Integer cantidadHoras) {
+  public UsuarioDTO cantidadHoras(@javax.annotation.Nullable Double cantidadHoras) {
     this.cantidadHoras = cantidadHoras;
     return this;
   }
@@ -260,11 +213,11 @@ public class UsuarioDTO {
    * @return cantidadHoras
    */
   @javax.annotation.Nullable
-  public Integer getCantidadHoras() {
+  public Double getCantidadHoras() {
     return cantidadHoras;
   }
 
-  public void setCantidadHoras(@javax.annotation.Nullable Integer cantidadHoras) {
+  public void setCantidadHoras(@javax.annotation.Nullable Double cantidadHoras) {
     this.cantidadHoras = cantidadHoras;
   }
 
@@ -280,19 +233,17 @@ public class UsuarioDTO {
     }
     UsuarioDTO usuarioDTO = (UsuarioDTO) o;
     return Objects.equals(this.id, usuarioDTO.id) &&
-        Objects.equals(this.nombreCompleto, usuarioDTO.nombreCompleto) &&
-        Objects.equals(this.tutorDocente, usuarioDTO.tutorDocente) &&
-        Objects.equals(this.ciclo, usuarioDTO.ciclo) &&
-        Objects.equals(this.año, usuarioDTO.año) &&
-        Objects.equals(this.evaluacion, usuarioDTO.evaluacion) &&
-        Objects.equals(this.docente, usuarioDTO.docente) &&
-        Objects.equals(this.empresaAsignada, usuarioDTO.empresaAsignada) &&
+        Objects.equals(this.nombreUsuario, usuarioDTO.nombreUsuario) &&
+        Objects.equals(this.contraseña, usuarioDTO.contraseña) &&
+        Objects.equals(this.perfil, usuarioDTO.perfil) &&
+        Objects.equals(this.usuarioAsociado, usuarioDTO.usuarioAsociado) &&
+        Objects.equals(this.activo, usuarioDTO.activo) &&
         Objects.equals(this.cantidadHoras, usuarioDTO.cantidadHoras);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, nombreCompleto, tutorDocente, ciclo, año, evaluacion, docente, empresaAsignada, cantidadHoras);
+    return Objects.hash(id, nombreUsuario, contraseña, perfil, usuarioAsociado, activo, cantidadHoras);
   }
 
   @Override
@@ -300,13 +251,11 @@ public class UsuarioDTO {
     StringBuilder sb = new StringBuilder();
     sb.append("class UsuarioDTO {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    nombreCompleto: ").append(toIndentedString(nombreCompleto)).append("\n");
-    sb.append("    tutorDocente: ").append(toIndentedString(tutorDocente)).append("\n");
-    sb.append("    ciclo: ").append(toIndentedString(ciclo)).append("\n");
-    sb.append("    año: ").append(toIndentedString(año)).append("\n");
-    sb.append("    evaluacion: ").append(toIndentedString(evaluacion)).append("\n");
-    sb.append("    docente: ").append(toIndentedString(docente)).append("\n");
-    sb.append("    empresaAsignada: ").append(toIndentedString(empresaAsignada)).append("\n");
+    sb.append("    nombreUsuario: ").append(toIndentedString(nombreUsuario)).append("\n");
+    sb.append("    contraseña: ").append(toIndentedString(contraseña)).append("\n");
+    sb.append("    perfil: ").append(toIndentedString(perfil)).append("\n");
+    sb.append("    usuarioAsociado: ").append(toIndentedString(usuarioAsociado)).append("\n");
+    sb.append("    activo: ").append(toIndentedString(activo)).append("\n");
     sb.append("    cantidadHoras: ").append(toIndentedString(cantidadHoras)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -331,13 +280,11 @@ public class UsuarioDTO {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("id");
-    openapiFields.add("nombreCompleto");
-    openapiFields.add("tutorDocente");
-    openapiFields.add("ciclo");
-    openapiFields.add("año");
-    openapiFields.add("evaluacion");
-    openapiFields.add("docente");
-    openapiFields.add("empresaAsignada");
+    openapiFields.add("nombreUsuario");
+    openapiFields.add("contraseña");
+    openapiFields.add("perfil");
+    openapiFields.add("usuarioAsociado");
+    openapiFields.add("activo");
     openapiFields.add("cantidadHoras");
 
     // a set of required properties/fields (JSON key names)
@@ -365,23 +312,18 @@ public class UsuarioDTO {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("nombreCompleto") != null && !jsonObj.get("nombreCompleto").isJsonNull()) && !jsonObj.get("nombreCompleto").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `nombreCompleto` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nombreCompleto").toString()));
+      if ((jsonObj.get("nombreUsuario") != null && !jsonObj.get("nombreUsuario").isJsonNull()) && !jsonObj.get("nombreUsuario").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `nombreUsuario` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nombreUsuario").toString()));
       }
-      if ((jsonObj.get("tutorDocente") != null && !jsonObj.get("tutorDocente").isJsonNull()) && !jsonObj.get("tutorDocente").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `tutorDocente` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tutorDocente").toString()));
+      if ((jsonObj.get("contraseña") != null && !jsonObj.get("contraseña").isJsonNull()) && !jsonObj.get("contraseña").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `contraseña` to be a primitive type in the JSON string but got `%s`", jsonObj.get("contraseña").toString()));
       }
-      if ((jsonObj.get("ciclo") != null && !jsonObj.get("ciclo").isJsonNull()) && !jsonObj.get("ciclo").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `ciclo` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ciclo").toString()));
+      if ((jsonObj.get("perfil") != null && !jsonObj.get("perfil").isJsonNull()) && !jsonObj.get("perfil").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `perfil` to be a primitive type in the JSON string but got `%s`", jsonObj.get("perfil").toString()));
       }
-      if ((jsonObj.get("evaluacion") != null && !jsonObj.get("evaluacion").isJsonNull()) && !jsonObj.get("evaluacion").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `evaluacion` to be a primitive type in the JSON string but got `%s`", jsonObj.get("evaluacion").toString()));
-      }
-      if ((jsonObj.get("docente") != null && !jsonObj.get("docente").isJsonNull()) && !jsonObj.get("docente").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `docente` to be a primitive type in the JSON string but got `%s`", jsonObj.get("docente").toString()));
-      }
-      if ((jsonObj.get("empresaAsignada") != null && !jsonObj.get("empresaAsignada").isJsonNull()) && !jsonObj.get("empresaAsignada").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `empresaAsignada` to be a primitive type in the JSON string but got `%s`", jsonObj.get("empresaAsignada").toString()));
+      // validate the optional field `usuarioAsociado`
+      if (jsonObj.get("usuarioAsociado") != null && !jsonObj.get("usuarioAsociado").isJsonNull()) {
+        Alumno.validateJsonElement(jsonObj.get("usuarioAsociado"));
       }
   }
 

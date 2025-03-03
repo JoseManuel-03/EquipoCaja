@@ -15,6 +15,7 @@ package org.openapitools.client.api;
 
 import org.openapitools.client.ApiException;
 import org.openapitools.client.model.ChangePasswordRequest;
+import org.openapitools.client.model.FechaPractica;
 import java.time.LocalDate;
 import org.openapitools.client.model.LoginRequest;
 import org.openapitools.client.model.RegistroPractica;
@@ -76,6 +77,24 @@ public class UsuarioServiceApiApiTest {
         LocalDate fecha1 = null;
         LocalDate fecha2 = null;
         List<RegistroPractica> response = api.consultarDetalles(idUser, fecha1, fecha2);
+        // TODO: test validations
+    }
+
+    /**
+     * Consultar Fechas
+     *
+     * Devuelve todas la fechas disponibles para el usuario
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void consultarFechasTest() throws ApiException {
+        Long idUser = null;
+        Integer anioCurso = null;
+        String evaluacion = null;
+        LocalDate fechaInicio = null;
+        LocalDate fechaFin = null;
+        List<FechaPractica> response = api.consultarFechas(idUser, anioCurso, evaluacion, fechaInicio, fechaFin);
         // TODO: test validations
     }
 

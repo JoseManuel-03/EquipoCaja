@@ -9,8 +9,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import main.apiService.ApiService;
-import main.gui.AppController;
 
+import org.openapitools.client.model.FechaPractica;
 import org.openapitools.client.model.RegistroPractica;
 import org.openapitools.client.model.UsuarioDTO;
 
@@ -54,8 +54,15 @@ public class ConsultarRegistroController extends AppController {
     @FXML
     public void initialize() {
         // Configura las columnas de la tabla
-        columnaFechas.setCellValueFactory(new PropertyValueFactory<>("fecha"));
-        columnaHorasRegistradas.setCellValueFactory(new PropertyValueFactory<>("horas"));
+    	columnaFechas.setCellValueFactory(cellData -> {
+    	    FechaPractica fechaPractica = cellData.getValue().getFecha();
+    	    String fecha = (fechaPractica != null && fechaPractica.getFecha() != null) 
+    	                    ? fechaPractica.getFecha().toString() 
+    	                    : "Sin fecha";
+    	    return new SimpleStringProperty(fecha);
+    	});
+
+        columnaHorasRegistradas.setCellValueFactory(new PropertyValueFactory<>("cantidadHoras"));
         columnaDescripcion.setCellValueFactory(cellData -> {
             String descripcion = cellData.getValue().getDescripcion();
             return new SimpleStringProperty(descripcion != null && descripcion.length() > 20 ?
@@ -105,6 +112,8 @@ public class ConsultarRegistroController extends AppController {
         // Obtén los filtros seleccionados
         LocalDate fechaDesde = datePickerDesde.getValue();
         LocalDate fechaHasta = datePickerHasta.getValue();
+        addParam("fechaDesde", fechaDesde);
+        addParam("fechaHasta", fechaHasta);
         String filtro = comboBoxFiltro.getValue();
 
         // Llama al servicio de la API para obtener los registros
@@ -158,11 +167,5 @@ public class ConsultarRegistroController extends AppController {
         }
     }
 
-    private void mostrarAlerta(String titulo, String mensaje) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle(titulo);
-        alert.setHeaderText(null);
-        alert.setContentText(mensaje);
-        alert.showAndWait();
-    }
+ 
 }

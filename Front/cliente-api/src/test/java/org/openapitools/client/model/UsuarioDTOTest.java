@@ -20,6 +20,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.client.model.Alumno;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -46,59 +47,43 @@ public class UsuarioDTOTest {
     }
 
     /**
-     * Test the property 'nombreCompleto'
+     * Test the property 'nombreUsuario'
      */
     @Test
-    public void nombreCompletoTest() {
-        // TODO: test nombreCompleto
+    public void nombreUsuarioTest() {
+        // TODO: test nombreUsuario
     }
 
     /**
-     * Test the property 'tutorDocente'
+     * Test the property 'contraseña'
      */
     @Test
-    public void tutorDocenteTest() {
-        // TODO: test tutorDocente
+    public void contraseñaTest() {
+        // TODO: test contraseña
     }
 
     /**
-     * Test the property 'ciclo'
+     * Test the property 'perfil'
      */
     @Test
-    public void cicloTest() {
-        // TODO: test ciclo
+    public void perfilTest() {
+        // TODO: test perfil
     }
 
     /**
-     * Test the property 'año'
+     * Test the property 'usuarioAsociado'
      */
     @Test
-    public void añoTest() {
-        // TODO: test año
+    public void usuarioAsociadoTest() {
+        // TODO: test usuarioAsociado
     }
 
     /**
-     * Test the property 'evaluacion'
+     * Test the property 'activo'
      */
     @Test
-    public void evaluacionTest() {
-        // TODO: test evaluacion
-    }
-
-    /**
-     * Test the property 'docente'
-     */
-    @Test
-    public void docenteTest() {
-        // TODO: test docente
-    }
-
-    /**
-     * Test the property 'empresaAsignada'
-     */
-    @Test
-    public void empresaAsignadaTest() {
-        // TODO: test empresaAsignada
+    public void activoTest() {
+        // TODO: test activo
     }
 
     /**

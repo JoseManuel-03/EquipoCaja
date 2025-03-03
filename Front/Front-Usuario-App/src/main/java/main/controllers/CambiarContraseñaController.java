@@ -9,7 +9,6 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import main.apiService.ApiService;
-import main.gui.AppController;
 
 public class CambiarContraseñaController extends AppController {
 
@@ -60,6 +59,10 @@ public class CambiarContraseñaController extends AppController {
 		// Obtiene los valores de los campos de texto
 		String contraseñaAntigua = textFieldAntigua.getText();
 		String contraseñaNueva = textFieldNueva.getText();
+		
+		if(contraseñaAntigua.equals(contraseñaNueva)) {
+			mostrarAlerta("Contraseña igual", "La contraseña nueva tiene que ser diferente a la antigua");
+		}
 
 		// Valida que los campos no estén vacíos
 		if (contraseñaAntigua.isEmpty() || contraseñaNueva.isEmpty()) {
@@ -78,7 +81,7 @@ public class CambiarContraseñaController extends AppController {
 		String resultado = apiService.cambiarContraseña(usuario.getId(), contraseñaAntigua, contraseñaNueva);
 
 		// Muestra el resultado en la interfaz
-		textoError.setText(resultado);
+		textoError.setText("Contraseña cambiada");
 
 		textFieldAntigua.clear();
 		textFieldNueva.clear();

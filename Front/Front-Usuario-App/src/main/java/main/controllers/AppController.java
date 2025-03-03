@@ -1,4 +1,4 @@
-package main.gui;
+package main.controllers;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -6,16 +6,9 @@ import java.util.Map;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import main.App;
-import main.controllers.AltaRegistroContorller;
-import main.controllers.CambiarContraseñaController;
-import main.controllers.ConsultarRegistroController;
-import main.controllers.DetalleRegistroController;
-import main.controllers.LoginController;
-import main.controllers.MenuController;
-import main.controllers.RegistroHorasController;
-import main.controllers.VerDatosController;
 
 public class AppController {
 	public static final String FXML_LOGIN = "/fxml/login.fxml";
@@ -105,6 +98,19 @@ public class AppController {
 	public Object getParam(String key) {
 		Map<String, Object> mapa = (Map<String, Object>) primaryStage.getUserData();
 		return mapa.get(key);
+	}
+	/**
+	 * Muestra una alerta con el mensaje de error.
+	 *
+	 * @param titulo  El título de la alerta.
+	 * @param mensaje El mensaje de la alerta.
+	 */
+	public void mostrarAlerta(String titulo, String mensaje) {
+		Alert alert = new Alert(Alert.AlertType.ERROR);
+		alert.setTitle(titulo);
+		alert.setHeaderText(null);
+		alert.setContentText(mensaje);
+		alert.showAndWait();
 	}
 	
 }

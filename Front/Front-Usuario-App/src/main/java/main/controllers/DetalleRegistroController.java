@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import main.apiService.ApiService;
-import main.gui.AppController;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import org.openapitools.client.model.RegistroPractica;
@@ -40,7 +39,13 @@ public class DetalleRegistroController extends AppController {
 
         // Muestra los detalles del registro
         if (registro != null) {
-            labelFecha.setText(registro.getFecha().toString());
+        	if (registro.getFecha() != null && registro.getFecha().getFecha() != null) {
+        	    labelFecha.setText(registro.getFecha().getFecha().toString());
+        	} else {
+        	    labelFecha.setText("Sin fecha");
+        	}
+
+
             labelHoras.setText(String.valueOf(registro.getCantidadHoras()));
             labelDescripcion.setText(registro.getDescripcion());
         }
@@ -64,13 +69,6 @@ public class DetalleRegistroController extends AppController {
        
     }
 
-    private void mostrarAlerta(String titulo, String mensaje) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle(titulo);
-        alert.setHeaderText(null);
-        alert.setContentText(mensaje);
-        alert.showAndWait();
-    }
     @FXML
     void irMenu(ActionEvent event) {
     	changeScene(FXML_CONSULTARREGISTRO);

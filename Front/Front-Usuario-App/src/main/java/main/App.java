@@ -3,7 +3,7 @@ package main;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import main.gui.AppController;
+import main.controllers.AppController;
 
 public class App extends Application {
 	@Override
